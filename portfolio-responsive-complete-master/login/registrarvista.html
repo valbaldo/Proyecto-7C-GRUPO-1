@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	   
+	   <title></title> 
+	   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="registrarvista_files/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+        <link rel="stylesheet" href="registrarvista_files/style-registlog.css">
+	</head>  
+    <body>
+        <form class="formulario" method="post" action="Registrar y login/registroUsuario.php" id="formRegistro" onsubmit="return verificarPass();">
+            <h1>Registrate</h1>
+            <div class="contenedor">
+                <div class="input-contenedor">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" placeholder="Nombre Completo" id="username" name="username" required>
+                </div>
+                <div class="input-contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="password" placeholder="Contraseña" id="pass" name="pass" required>  
+                </div>
+                <div class="input-contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" placeholder="Repetir contraseña"  id="pass2" name="pass2" required>
+                </div>
+                <input type="submit" value="Registrarse" class="button" name="registro" form="formRegistro">
+                <p>Valoramos tu privacidad y tu informacion personal no será compartida!</p>
+                <p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html"> Iniciar sesión</a></p>
+            </div>
+        </form>
+        <script type="text/javascript">
+    function verificarPass(){
+        pass1 = document.getElementById('pass');
+        pass2 = document.getElementById('pass2');
+        if(pass1.value != pass2.value){
+            alert("El usuario y contraseña no coinciden");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+    
+</body>
+</html>
