@@ -23,7 +23,7 @@
                         <li class="nav__item"><a href="#home" class="nav__link active">Inicio</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">Buscador de mascotas</a></li>
                       
-                        <li class="nav__item"><a href="login.html" class="nav__link">Inicio de Sesión</a></li>
+                        <li class="nav__item"><a href="assets/php/cerrarSesion.php" class="nav__link">Cerrar sesión</a></li>
                     </ul>
                 </div>
 
