@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("User y pass incorrectos");
-        window.location.href="../loginvista.html";
+        window.location.href="../../login.html";
         </script>';
     }
     else{
@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="../loginvista.html";
+            window.location.href="../../login.html";
             </script>';
         }
     }

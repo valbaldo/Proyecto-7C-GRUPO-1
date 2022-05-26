@@ -16,7 +16,7 @@ if(isset($_POST['registro'])){
     if($resultadoUser){
         echo'<script type="text/javascript">
         alert("El usuario ya existe");
-        window.location.href="../registrarvista.html";
+        window.location.href="../../register.html";
         </script>';
     }
     else{
@@ -27,7 +27,7 @@ if(isset($_POST['registro'])){
         if(!$resultadoRegistro){
             echo'<script type="text/javascript">
             alert("No se pudo registrar el usuario");
-            window.location.href="../registrarvista.html";
+            window.location.href="../../register.html";
             </script>';
         }
         else{
