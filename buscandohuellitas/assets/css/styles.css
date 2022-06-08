@@ -15,14 +15,14 @@
   --verdeo: hsl(var(--verdeoscuro), 97%, 13%);
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
-  --big-font-size: 2rem;
+  --big-font-size: 3rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
   /*===== Margenes =====*/
   --mb-2: 1rem;
-  --mb-4: 2rem;
-  --mb-5: 1rem;
+  --mb-4: 1rem;
+  --mb-5: 2rem;
   --mb-6: 3rem;
   /*===== z index =====*/
   --z-back: -10;
@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 968px) {
   :root {
-    --big-font-size: 6rem;
+    --big-font-size: 5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
     --smaller-font-size: .875rem;
@@ -55,7 +55,7 @@ body {
 }
 
 h1, h2, p {
-  margin: 5;
+  margin: 2;
 }
 
 ul {
@@ -194,7 +194,7 @@ img {
 /*===== HOME =====*/
 .home {
   position: relative;
-  row-gap: 8rem;
+  row-gap: 0rem;
   padding: 4rem 0 5rem;
 }
 

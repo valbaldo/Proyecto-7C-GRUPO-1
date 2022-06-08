@@ -52,7 +52,7 @@ input[type="password"]{
     font-size: 20px;
     background: var(--verdeo);
     padding: 15px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
 }
 .button:hover{
