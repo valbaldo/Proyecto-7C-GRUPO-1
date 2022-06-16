@@ -427,13 +427,6 @@ button{
   padding-top: 1rem;
 }
 
-.new__img{
-  width: 600px;
-  border-radius: .75rem;
-  margin-bottom: var(--mb-0-5);
-  transition: .3s;
-}
-
 .new__content{
   position: relative;
   background: var(--container-color);
@@ -445,50 +438,11 @@ button{
   overflow: hidden;
 }
 
-.new__tag{
-  position: absolute;
-  top: 8%;
-  left: 8%;
-  background-color: var(--verdeo);
-  color: var(--second-color);
-  font-size: var(--small-font-size);
-  padding: .25rem .5rem;
-  border-radius: .25rem;
-}
-
-.new__title{
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
-}
-
-.new__subtitle{
-  display: block;
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-0-5);
-}
-
-.new__button{
-  display: inline-flex;
-  padding: .5rem;
-  border-radius: .25rem .25rem .75rem .25rem;
-  position: absolute;
-  bottom: 0;
-  right: -3rem;
-  color: var(--verdeo);
-}
-
-.new__icon{
-  font-size: 1.25rem;
-  color: var(--second-color);
-}
 
 .new__content:hover .new__img{
   transform: translateY(-.5rem);
 }
 
-.new__content:hover .new__button{
-  right: 0;
-}
 
 /*=============== NEWSLETTER ===============*/
 .newsletter__description{
@@ -870,15 +824,9 @@ button{
     border-radius: 1rem;
     padding: 2rem 0;
   }
-  .new__img{
-    width: 150px;
-  }
   .new__img,
   .new__subtitle{
     margin-bottom: var(--mb-1);
-  }
-  .new__title{
-    font-size: var(--h3-font-size);
   }
 
   .footer__copy{
