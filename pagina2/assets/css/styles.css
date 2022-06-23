@@ -1,6 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
-
+@import "bootstrap/scss/bootstrap";
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
@@ -272,6 +272,8 @@ button{
 }
 
 .home__img{
+  max-width: 100%;
+  max-height: 100%;
   margin-top: 4rem;
   height: 8px;
   justify-self: center;
@@ -355,7 +357,53 @@ button{
 }
 
 /*=============== BUTTONS ===============*/
-.button{
+.centered-elements {
+  display: flex;
+  margin-left: -50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  height: 77px;
+  width: 400px;
+  border-radius: 45px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--verdeo);
+  font-size: 18px;
+  overflow: hidden;
+  transition: all 500ms ease;
+  border: 2px solid var(--verdeo);
+  margin-left: 100px;
+  z-index: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: var(--second-color);
+  transition: all 500ms ease;
+  z-index: -1;
+}
+.btn--1::before {
+  width: 0;
+  height: 100%;
+}
+.btn--1:hover {
+  color: var(--verdeo);
+}
+.btn--1:hover::before {
+  width: 100%;
+}
+
+.buttonsoporte{
   display: inline-block;
   background-color: var(--verdeo);
   color: var(--title-color);
@@ -364,9 +412,27 @@ button{
   font-weight: var(--font-medium);
   transition: .3s;
 }
-
+.button{
+  display: inline-block;
+  background-color: var(--verdeo);
+  color: var(--second-color);
+  padding: 1rem 1.75rem;
+  border-radius: 3rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+.button2{
+  display: inline-block;
+  margin-top: 5;
+  background-color: var(--verdeo);
+  color: var(--second-color);
+  padding: 1rem 1.75rem;
+  border-radius: .3rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
 .button:hover{
-  background-color: var(--first-color-alt);
+  background-color:#6E9979;
 }
 
 .button__icon{
@@ -484,7 +550,7 @@ button{
 .footer__img-one{
   width: 100px;
   top: 6rem;
-  right: -2rem;
+  right: 5rem;
 }
 
 .footer__img-two{
@@ -502,42 +568,20 @@ button{
   row-gap: 2rem;
 }
 
-.footer__logo{
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
-  margin-bottom: var(--mb-1);
-  font-weight: var(--font-medium);
-  color: var(--title-color);
-}
-
-.footer__logo-img{
-  width: 20px;
-}
-
 .footer__description{
   margin-bottom: var(--mb-2-5);
   left: 150px;
   text-align: center;
 }
 
-.footer__social{
-  display: flex;
-  column-gap: .75rem;
+.footer__description1{
+  font-weight: bold;
+  margin-bottom: 5px;
+  left: 150px;
+  text-align: center;
 }
 
-.footer__social-link{
-  display: inline-flex;
-  background: var(--container-color);
-  padding: .25rem;
-  border-radius: .25rem;
-  color: var(--title-color);
-  font-size: 1rem;
-}
 
-.footer__social-link:hover{
-  background: var(--body-color);
-}
 
 .footer__title{
   font-size: var(--h3-font-size);
@@ -654,6 +698,7 @@ button{
 
   .section{
     padding: 7rem 0 2rem;
+    margin: auto;
   }
 
   .nav{
@@ -729,7 +774,6 @@ button{
   }
 
   .footer__container{
-    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     column-gap: 1rem;
   }
@@ -834,7 +878,7 @@ button{
   }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 100px){
   .home__img{
     height: 420px;
   }
