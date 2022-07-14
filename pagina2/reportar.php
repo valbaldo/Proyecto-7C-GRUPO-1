@@ -16,9 +16,6 @@
         <!--=============== CSS ===============--> 
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <!--=============== CSS ===============--> 
-        <link rel="stylesheet" href="pruebas.css">
-
         <title>Buscando Huellitas</title>
     </head>
     <body>
@@ -80,56 +77,44 @@
            
 
             <!--==================== NEW ARRIVALS ====================-->
-                    <h2>Mascotas desaparecidas</h2>
-            <div class="slider">
-        <input type="radio" name="testimonial" id="t-1">
-        <input type="radio" name="testimonial" id="t-2">
-        <input type="radio" name="testimonial" id="t-3" checked>
-        <input type="radio" name="testimonial" id="t-4">
-        <input type="radio" name="testimonial" id="t-5">
-        <div class="testimonials">
-            <label class="item" for="t-1">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-2">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-3">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-4">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-5">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-        </div>
-        <div class="dots">
-            <label for="t-1"></label>
-            <label for="t-2"></label>
-            <label for="t-3"></label>
-            <label for="t-4"></label>
-            <label for="t-5"></label>
-        </div>
-    </div>
+            <section class="section new" id="new">
+                <h2 class="section__title">Mascotas desaparecidas</h2>
+
+                <div class="work__container bd-grid">
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota1.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota2.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota3.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota4.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota5.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/mascota6.jpg" alt="">
+                    </a>
+                </div>
+            </section>
 
             <!--==================== OUR NEWSLETTER ====================-->
             <section class="section newsletter">
+               
             <div class="content centered-elements">
-                <a href="login.html" class="btn">Buscar mascota desaparecida</a>
-                <a href="login.html" class="btn">Reportar mascota desaparecida</a>
+                <button class="btn btn--1">
+                Buscar mascota desaparecida</button>
+                <button href="login.html" class="btn btn--1" >
+                    <a href="login.html">Reportar mascota desaparecida</a>
+                </button>
             </div>
             </section>
+        </main>
+
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
