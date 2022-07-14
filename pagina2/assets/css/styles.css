@@ -366,41 +366,19 @@ button{
 
 .btn {
   position: relative;
-  height: 77px;
-  width: 400px;
+  height: 70px;
+  width: 300px;
   border-radius: 45px;
   text-transform: uppercase;
   background-color: transparent;
   color: var(--verdeo);
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
   overflow: hidden;
-  transition: all 500ms ease;
   border: 2px solid var(--verdeo);
   margin-left: 100px;
   z-index: 0;
   font-weight: 700;
-  cursor: pointer;
-}
-.btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin: auto;
-  background-color: var(--second-color);
-  transition: all 500ms ease;
-  z-index: -1;
-}
-.btn--1::before {
-  width: 0;
-  height: 100%;
-}
-.btn--1:hover {
-  color: var(--verdeo);
-}
-.btn--1:hover::before {
-  width: 100%;
 }
 
 .buttonsoporte{
