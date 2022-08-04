@@ -915,3 +915,31 @@ button{
     margin-left: auto;
     margin-right: auto;
   }
+
+  /*=============== LISTAAA ===============*/
+
+.contenedor2 .info2{
+  background: #ffffffd5;
+  padding: 20px;
+  border-radius: 6px;
+  height: 950px;
+  grid-column-start: 1;
+  grid-column-end: 4;sexo
+  box-shadow: 1px 5px 25px rgba(0, 0, 0, 0.45);
+}
+
+.contenedor2 .per1{
+  
+  background-color: rgba(116,97,121,0.3);
+  height: 270px;
+  display: flex;
+  align: center;
+  padding: 10px;
+  margin: 20px;
+}
+
+.img_per{
+  width: 250px;
+  height: 250px;
+  box-shadow: 1px 5px 25px rgba(0, 0, 0, 0.45);
+}
