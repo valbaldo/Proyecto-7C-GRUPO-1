@@ -33,7 +33,7 @@
   --body-font: 'Poppins', sans-serif;
   --biggest-font-size: 2rem;
   --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
+  --h2-font-size: 1.5rem;
   --h3-font-size: 1rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
@@ -75,7 +75,7 @@
 *{
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  
 }
 
 html{
@@ -93,6 +93,7 @@ body{
 h1,h2,h3,h4{
   color: var(--verdeo);
   font-weight: var(--font-semi-bold);
+  text-align: center;
 }
 
 ul{
@@ -128,7 +129,7 @@ button{
 .section__title{
   font-size: var(--h2-font-size);
   margin-bottom: var(--mb-2);
-  text-align: center;
+  text-align: left;
 }
 
 /*=============== LAYOUT ===============*/
