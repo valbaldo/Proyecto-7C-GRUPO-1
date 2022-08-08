@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
         if(password_verify($pass,$resultado['pass'])){ 
             $_SESSION['IdUsuario'] = $resultado['ID'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location:../../index.php");
+           header("Location: ../../report/report.html");
         }
         else{
             echo'<script type="text/javascript">
