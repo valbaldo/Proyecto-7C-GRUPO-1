@@ -1,7 +1,7 @@
 <?php
 	include ("cn.php");
 
-	$nombre= $_POST['nombre'];
+	$nombre= $_POST['nombre_mascota'];
 	$edad=$_POST['edad'];
 	$descripcion= $_POST['descripcion'];
 	$lugar= $_POST['lugar'];
