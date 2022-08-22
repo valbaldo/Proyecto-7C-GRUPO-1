@@ -6,19 +6,20 @@
 	$barrio= $_POST['barrio'];
 	$calle= $_POST['calle'];
 	$observacion= $_POST['observacion'];
+	$celular= $_POST['celular'];
 
-	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion')";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){
             echo'<script type="text/javascript">
             alert("Reporte enviado");
-            window.location.href="../../report/report.php";
+            window.location.href="report.php";
             </script>';
 	} else{
             echo'<script type="text/javascript">
             alert("No se pudo enviar el reporte");
-            window.location.href="../../report/report.php";
+            window.location.href="report.php";
             </script>';
 		}
 ?>

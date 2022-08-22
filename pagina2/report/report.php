@@ -1,3 +1,7 @@
+<?php
+    include("cn.php");
+?>
+
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
@@ -18,7 +22,7 @@
     <div class="container">
         <header>Reportar Mascota</header>
 
-        <form method="post" action="assets/php/insertar.php" enctype="multipart/form-data">
+        <form method="post" action="insertar.php" enctype="multipart/form-data">
             <div class="form first">    
                 <div class="details personal">
                     <span class="title">Datos de la mascota</span>
@@ -42,7 +46,7 @@
 
                         <div class="input-field">
                             <label>Foto mascota</label>
-                            <input type="file" style="padding-top:10px;font-family: 'Poppins', sans-serif;" required name="foto">
+                            <input type="file" style="padding-top:10px; font-family: 'Poppins', sans-serif;" required name= "foto">
                         </div>
 
 
@@ -134,7 +138,7 @@
 
                         <div class="input-field">
                             <label>Obsevaciones/acalaraciones extra</label>
-                            <input type="text" placeholder="Ingresar observaciones" required name="observaciones">
+                            <input type="text" placeholder="Ingresar observaciones" required name="observacion">
                         </div>
 
 
@@ -166,7 +170,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label> </label>
-                            <input type="number" placeholder="Ingresar telefono celular" required>
+                            <input type="number" placeholder="Ingresar telefono celular" required name="celular">
                         </div>
                     </div>
 <div class="col-12">
