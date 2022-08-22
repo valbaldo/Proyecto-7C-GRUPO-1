@@ -14,7 +14,7 @@
 	if($resultado){
             echo'<script type="text/javascript">
             alert("Reporte enviado");
-            window.location.href="report.php";
+            window.location.href="../index.php";
             </script>';
 	} else{
             echo'<script type="text/javascript">

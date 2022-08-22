@@ -16,8 +16,9 @@
         <!--=============== CSS ===============--> 
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <!--=============== CSS ===============--> 
-        <link rel="stylesheet" href="pruebas.css">
+        <!--=============== CSS CARROUSEL ===============--> 
+        <link rel="stylesheet" href="assets/css/carrousel.css">
+
 
         <title>Buscando Huellitas</title>
     </head>
@@ -38,9 +39,12 @@
 
                         <li class="nav__item">
                             <a href="#new" class="nav__link">Mascotas desaparecidas</a>
+                               <li class="nav__item">
+                            <a href="#options" class="nav__link active-link">Opciones</a>
+                        </li>
                         </li>
 
-                        <a href="login.html" class="buttonsoporte button--ghost">Soporte</a>
+                        <a href="login-inicio.html" class="buttonsoporte button--ghost">Iniciar sesion</a>
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -80,7 +84,11 @@
            
 
             <!--==================== NEW ARRIVALS ====================-->
+                   
+<section class="home container" id="new">
+    <div class="content centered-elements">
                     <h2>Mascotas desaparecidas</h2>
+                </div>
             <div class="slider">
         <input type="radio" name="testimonial" id="t-1">
         <input type="radio" name="testimonial" id="t-2">
@@ -124,7 +132,7 @@
     </div>
 
             <!--==================== OUR NEWSLETTER ====================-->
-            <section class="section newsletter">
+            <section class="section newsletter" id="options">
             <div class="content centered-elements">
                 <a href="login.html" class="btn">Buscar mascota desaparecida</a>
                 <a href="login.html" class="btn">Reportar mascota desaparecida</a>

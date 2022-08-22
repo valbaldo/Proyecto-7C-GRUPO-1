@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("User y pass incorrectos");
-        window.location.href="../../login.html";
+        window.location.href="../../login-inicio.html";
         </script>';
     }
     else{
@@ -23,12 +23,12 @@ if(isset($_POST['login'])){
         if(password_verify($pass,$resultado['pass'])){ 
             $_SESSION['IdUsuario'] = $resultado['ID'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location: ../../report/report.php");
+           header("Location: ../../index.php");
         }
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="../../login.html";
+            window.location.href="../../login-inicio.html";
             </script>';
         }
     }
