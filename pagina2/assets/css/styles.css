@@ -197,7 +197,7 @@ button{
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
   .nav__menu{
     position: fixed;
     width: 100%;
@@ -372,6 +372,11 @@ button{
   justify-content: center;
   width: 100%;
 }
+.centered-elements2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .btn {
   align-content: center;
@@ -391,6 +396,14 @@ button{
   z-index: 0;
   font-weight: 700;
 }
+
+@media screen and (max-width: 991px){
+  .centered-elements2{
+      display: justify;
+       width: 100%;
+                    }
+      }
+  
 
 .buttonsoporte{
   display: inline-block;
@@ -682,7 +695,7 @@ button{
   }
 }
 
-@media screen and (min-width: 767px){
+@media screen and (min-width: 991px){
   body{
     margin: 0;
   }
@@ -869,7 +882,7 @@ button{
   }
 }
 
-@media screen and (min-width: 420px){
+@media screen and (min-width: 100px){
   .home__img{
     height: 420px;
   }
