@@ -166,6 +166,18 @@ button{
 .loginboton{
   margin-top: 0.5rem;
 }
+
+.login-nav > li{
+  float: left;
+}
+
+.login-nav li ul{
+  display: none;
+  position: absolute;
+  max-width: 140px;
+
+}
+
 /*=============== NAV ===============*/
 .nav{
   height: var(--header-height);

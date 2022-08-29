@@ -20,6 +20,9 @@
         <link rel="stylesheet" href="assets/css/carrousel.css">
 
 
+        <!--=============== CSS CARROUSEL ===============--> 
+        <script type="text/javascript" src="login.js"></script>
+
         <title>Buscando Huellitas</title>
     </head>
     <body>
@@ -39,12 +42,18 @@
 
                         <li class="nav__item">
                             <a href="#new" class="nav__link">Mascotas desaparecidas</a>
-                               <li class="nav__item">
+                        </li>
+                        <li class="nav__item">
                             <a href="#options" class="nav__link active-link">Opciones</a>
                         </li>
-                        </li>
-
-                        <a href="assets/php/cerrarSesion.php" class="buttonsoporte button--ghost">Cerrar sesion</a>
+                        <ul class="login-nav">
+                            <li><a href="login-inicio.html" class="loginboton"><img src="assets/img/icons8-usuario-de-género-neutro-32.png"></a></li>
+                                <ul>
+                                    <li><a href="">Hola</a></li>
+                                    <li><a href="">Buenas</a></li>
+                                    <li><a href="">Chau</a></li>
+                                </ul>
+                        </ul>
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -133,9 +142,9 @@
 
             <!--==================== OUR NEWSLETTER ====================-->
             <section class="section newsletter" id="options">
-            <div class="content centered-elements">
-                <a href="report/report.php" class="btn">Buscar mascota desaparecida</a>
-                <a href="report/report.php" class="btn">Reportar mascota desaparecida</a>
+            <div class="content centered-elements2">
+                <a href="login.html" class="btn">Buscar mascota</a>
+                <a href="login.html" class="btn">Reportar mascota</a>
             </div>
             </section>
         <!--==================== FOOTER ====================-->
