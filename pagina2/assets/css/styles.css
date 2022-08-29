@@ -163,7 +163,9 @@ button{
   left: 0;
   z-index: var(--z-fixed);
 }
-
+.loginboton{
+  margin-top: 0.5rem;
+}
 /*=============== NAV ===============*/
 .nav{
   height: var(--header-height);
@@ -372,8 +374,9 @@ button{
 }
 
 .btn {
-  position: relative;
-  height: 70px;
+  align-content: center;
+  position: center;
+  height: ;
   width: 300px;
   border-radius: 45px;
   text-transform: uppercase;
@@ -383,7 +386,8 @@ button{
   text-align: center;
   overflow: hidden;
   border: 2px solid var(--verdeo);
-  margin-left: 100px;
+  margin-right:100px;
+  margin-left:100px;
   z-index: 0;
   font-weight: 700;
 }
@@ -494,7 +498,9 @@ button{
   transform: translateY(-.5rem);
 }
 
-
+.flecha{
+  margin-left: 27rem;
+}
 /*=============== NEWSLETTER ===============*/
 .newsletter__description{
   text-align: center;
@@ -682,7 +688,7 @@ button{
   }
 
   .section{
-    padding: 7rem 0 2rem;
+    padding: 7px 0 2rem;
     margin: auto;
   }
 
@@ -863,7 +869,7 @@ button{
   }
 }
 
-@media screen and (min-width: 100px){
+@media screen and (min-width: 420px){
   .home__img{
     height: 420px;
   }
