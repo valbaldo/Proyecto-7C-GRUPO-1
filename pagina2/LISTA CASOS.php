@@ -45,10 +45,9 @@
                             <a href="#options" class="nav__link">Adoptar</a>
                         </li>
                         </li>
-
-                        <a href="assets/php/cerrarSesion.php" class="loginboton">
-                            <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
-                        </a>
+                        <a href="assets/php/cerrarSesion.php" class="loginboton"></a>
+                        <a href="cerrarSesion.php" class="loginboton">
+                            <img src="assets/img/icons8-usuario-de-género-neutro-32.png"></a>
                     </ul>
 
                     <div class="nav__close" id="nav-close">
