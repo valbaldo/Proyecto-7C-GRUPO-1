@@ -46,7 +46,7 @@
                         </li>
                         </li>
 
-                        <a href="cerrarSesion.php" class="loginboton">
+                        <a href="assets/php/cerrarSesion.php" class="loginboton">
                             <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
                         </a>
                     </ul>

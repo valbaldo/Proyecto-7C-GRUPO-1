@@ -32,7 +32,7 @@
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --biggest-font-size: 2rem;
-  --h1-font-size: 1rem;
+  --h1-font-size: 1.5rem;
   --h2-font-size: 2.5rem;
   --h3-font-size: 1rem;
   --normal-font-size: .938rem;
@@ -62,7 +62,7 @@
 @media screen and (min-width: 992px) {
   :root {
     --biggest-font-size: 4rem;
-    --h1-font-size: 1rem;
+    --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -89,11 +89,7 @@ body{
   background: var(--body-color);
   color: var(--text-color);
 }
-.container {
-    margin-left: auto;
-    margin-right: auto;
 
-}
 .home__title{
   color: var(--verdeo);
   font-weight: var(--font-semi-bold);
@@ -102,9 +98,8 @@ body{
 
 h1,h2,h3,h4{
   color: var(--verdeo);
-  font-size: 1.2rem;
   font-weight: var(--font-semi-bold);
-  text-align: left;
+  text-align: center;
 }
 
 ul{
@@ -115,17 +110,22 @@ a{
   text-decoration: none;
 }
 
-.fotos{
-   /* cambia estos dos valores para definir el tamaño de tu círculo */
-    height: 300px;
-    width: 100px;
-    /* los siguientes valores son independientes del tamaño del círculo */
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
+img{
+  max-width: 100%;
+  height: auto;
 }
 
+button,
+input{
+  border: none;
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section{
@@ -207,77 +207,6 @@ a{
 .nav__toggle{
   font-size: 1.25rem;
   cursor: pointer;
-}
-
-.page-nav {
-    background-color: #2196F3;
-    border: 1px solid black;
-    position: relative;
-}
-
-.page-nav h1 {
-    margin: 20px;
-}
-
-.button-checkout {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA; /* Blue */
-    transition-duration: 0.4s;
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-}
-
-.button-checkout:hover {
-    background-color: #008CBA; /* Blue */
-    color: white;
-}
-
-.page-content {
-   
-    margin-top: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.product-container {
-  border-radius: 25px;
-    margin: 15px;
-    padding: 2px 16px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-    background-color: white;
-}
-
-.product-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-
-.product-container img {
-    width: 300px;
-}
-
-.product-container h1 {
-    margin-bottom: 10px;
-    margin-left: 15px;
-}
-
-.button-add {
-    background-color: white;
-    color: var(--verdeo);
-    border: 2px solid;
-     border-color: var(--verdeo); /* Green */
-    transition-duration: 0.4s;
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
-}
-  
-.button-add:hover {
-    background-color: var(--verdeo); /* Green */
-    color: white;
 }
 
 @media screen and (max-width: 991px){
@@ -497,11 +426,14 @@ a{
   font-weight: var(--font-medium);
   transition: .3s;
 }
-button {
-    font-size: 16px;
-    text-align: center;
-    border-radius: 45px;
-    padding: 10px 20px;
+.button{
+  display: inline-block;
+  background-color: var(--verdeo);
+  color: var(--second-color);
+  padding: 1rem 1.75rem;
+  border-radius: 3rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
 }
 .button2{
   display: inline-block;
@@ -650,11 +582,9 @@ button {
 
 .footer__container{
   row-gap: 2rem;
-
 }
 
 .footer__description{
- margin-top: 0rem;
   margin-bottom: var(--mb-2-5);
   left: 150px;
   text-align: center;
@@ -662,7 +592,6 @@ button {
 
 .footer__description1{
   font-weight: bold;
-  margin-top: 15rem;
   margin-bottom: 5px;
   left: 150px;
   text-align: center;
@@ -673,7 +602,6 @@ button {
 .footer__title{
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-1);
-   margin-top: 5rem;
 }
 
 .footer__links{
@@ -1255,3 +1183,54 @@ button {
 #t-5:checked ~ .testimonials label[for="t-5"] {
     z-index: 4;
 }
+/*publicacion*/
+.about{
+  border: 2px solid;
+  border-radius:30px;
+  margin-top: 110px;
+  width: 100%;
+  padding: 100px 0px;
+  background-color:#bcdcc4;
+}
+.about img{
+  border-radius: 30px;
+  height: auto;
+  width: 430px;
+}
+.about-text{
+  width: 550px;
+  position: relative;
+}
+.main{
+  width: 1130px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.about-text p{
+  color: #014134;
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-size: 18px;
+  margin-bottom:10px;
+}
+button{
+  margin-top: 30px;
+  background-color:#014134;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 13px 30px;
+  border-radius: 30px;
+  transition: .4s; 
+}
+button:hover{
+  background-color: #007e65;
+  border: 2px solid #014134;
+  cursor: pointer;
+}
+
+
