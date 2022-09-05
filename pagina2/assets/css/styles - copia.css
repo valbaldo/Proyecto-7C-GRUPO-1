@@ -115,7 +115,7 @@ a{
   text-decoration: none;
 }
 
-img{
+.fotos{
    /* cambia estos dos valores para definir el tamaño de tu círculo */
     height: 300px;
     width: 100px;
@@ -125,14 +125,6 @@ img{
     border-radius: 50%;
     background-size: 100% auto;
 }
-
-img2{
-  max-width: 100%;
-  height: auto;
-  border-radius: : 45px;
-}
-
-
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/

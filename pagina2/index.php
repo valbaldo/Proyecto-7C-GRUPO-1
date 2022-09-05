@@ -20,9 +20,6 @@
         <link rel="stylesheet" href="assets/css/carrousel.css">
 
 
-        <!--=============== CSS CARROUSEL ===============--> 
-        <script type="text/javascript" src="login.js"></script>
-
         <title>Buscando Huellitas</title>
     </head>
     <body>
@@ -43,17 +40,15 @@
                         <li class="nav__item">
                             <a href="#new" class="nav__link">Mascotas desaparecidas</a>
                         </li>
+
                         <li class="nav__item">
-                            <a href="#options" class="nav__link active-link">Opciones</a>
+                            <a href="#options" class="nav__link">Adoptar</a>
                         </li>
-                        <ul class="login-nav">
-                            <li><a href="login-inicio.html" class="loginboton"><img src="assets/img/icons8-usuario-de-género-neutro-32.png"></a></li>
-                                <ul>
-                                    <li><a href="">Hola</a></li>
-                                    <li><a href="">Buenas</a></li>
-                                    <li><a href="">Chau</a></li>
-                                </ul>
-                        </ul>
+
+                        <a href="assets/php/cerrarSesion.php" class="loginboton">
+                            <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
+                        </a>
+
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -143,15 +138,19 @@
             <!--==================== OUR NEWSLETTER ====================-->
             <section class="section newsletter" id="options">
             <div class="content centered-elements2">
-                <a href="login.html" class="btn">Buscar mascota</a>
-                <a href="login.html" class="btn">Reportar mascota</a>
+                <a href="LISTA CASOS.php" class="button-add">Buscar mascota</a>
+                <div>
+                            <h6>holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h6>
+                        </div>
+                <a href="report/report.php" class="button-add">Reportar mascota</a>
             </div>
             </section>
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
                     <div class="footer__content">
-                        <p class="footer__description1">Buscando Huellitas</p>
+                        <p class="footer__description1">Buscando Huellitas © 2022</p>
+                        
                         <p class="footer__description">Busca, encontra y adopta.</p>
                     </div>
                     </div>

@@ -1,3 +1,7 @@
+<?php
+    include("assets/php/cn.php");
+    $usuarios="SELECT * FROM perdidos";
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -42,7 +46,7 @@
                         </li>
                         </li>
 
-                        <a href="login-inicio.html" class="loginboton">
+                        <a href="cerrarSesion.php" class="loginboton">
                             <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
                         </a>
                     </ul>
@@ -66,46 +70,53 @@
            <div>
            </div>
            <div class="page-content">
-        <div class="product-container">
-            <h3>Nombre Mascota</h3>
-            <img class="fotos" src="images/product-1.jpg" />
-            <h1>Zona: </h1>
+            <?php
+            $resultado=mysqli_query($conexion, $usuarios);
+            while($row=mysqli_fetch_assoc($resultado)){
+            ?>
+                <div class="product-container">
+                    <h3><?php echo $row["nombre_mascota"]?></h3>
+                    <img class="fotos" src="images/product-1.jpg" />
+                    <h1>Localidad: </h1>
             
-            <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
-        </div>
+                    <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
+                </div>
+            <?php
+            }
+            ?>
 
         <div class="product-container">
             <h3>Nombre Mascota</h3>
             <img class="fotos" src="images/product-2.jpg" />
-            <h1>Zona:</h1>
+            <h1>Localidad:</h1>
             <button class="button-add" onclick="add('product-2', 300)">Ver mas</button>
         </div>
 
         <div class="product-container">
             <h3>Nombre Mascota</h3>
             <img class="fotos" src="images/product-3.jpg" />
-            <h1>Zona:</h1>
+            <h1>Localidad:</h1>
             <button class="button-add" onclick="add('product-3', 250)">Ver mas</button>
         </div>
 
         <div class="product-container">
             <h3>Nombre Mascota</h3>
             <img class="fotos" src="images/product-4.jpg" />
-            <h1>Zona:</h1>
+            <h1>Localidad:</h1>
             <button class="button-add" onclick="add('product-4', 200)">Ver mas</button>
         </div>
 
         <div class="product-container">
             <h3>Nombre Mascota</h3>
             <img class="fotos" src="images/product-5.jpg" />
-            <h1>Zona:</h1>
+            <h1>Localidad:</h1>
             <button class="button-add" onclick="add('product-5', 10)">Ver mas</button>
         </div>
 
         <div class="product-container">
             <h3>Nombre Mascota</h3>
             <img class="fotos" src="images/product-6.jpg" />
-            <h1>Zona:</h1>
+            <h1>Localidad:</h1>
             <button class="button-add" onclick="add('product-6', 650)">Ver mas</button>
         </div>
     </div>
