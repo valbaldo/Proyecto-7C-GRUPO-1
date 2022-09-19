@@ -7,7 +7,9 @@
 	$calle= $_POST['calle'];
 	$observacion= $_POST['observacion'];
 	$celular= $_POST['celular'];
+	$localidad=$_POST['localidad'];
 
+	$insertar= "INSERT INTO perdidos(id_localidad) SET localidad('$localidad')";
 	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular')";
 
 	$resultado=mysqli_query($conexion, $insertar);
