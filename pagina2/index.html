@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
         <!--=============== BOXICONS ===============-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -37,12 +38,24 @@
                             <a href="#home" class="nav__link active-link">Inicio</a>
                         </li>
 
-                        <li class="nav__item">
-                            <a href="#new" class="nav__link">Mascotas desaparecidas</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#options" class="nav__link">Adoptar</a>
-                        </li>
+                        <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mascotas desaparecidas
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
+                        <li><a class="dropdown-item" href="#">Buscar mascota</a></li>
+                      </ul>
+                    </div>
+                        <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Adopción
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Dar en adopcion</a></li>
+                        <li><a class="dropdown-item" href="#">Adoptar</a></li>
+                      </ul>
+                    </div>
                         <a href="login-inicio.html" class="loginboton">
                             <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
                         </a>
@@ -169,5 +182,6 @@
         
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 </html>
