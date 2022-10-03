@@ -10,7 +10,6 @@
         <!--=============== BOXICONS ===============-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-
         <!--=============== SWIPER CSS ===============--> 
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
@@ -25,55 +24,55 @@
     </head>
     <body>
         <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container" >
-                <a href="#" class="nav__logo">
-                    <img src="assets/img/logo.png" alt="" class="nav__logo-img">
-                    Buscando Huellitas
-                </a>
+        <nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Buscando Huellitas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mascotas desaparecidas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
+              <li><a class="dropdown-item" href="#">Buscar Mascota</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Inicio</a>
-                        </li>
-
-                        <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mascotas desaparecidas
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
-                        <li><a class="dropdown-item" href="#">Buscar mascota</a></li>
-                      </ul>
-                    </div>
-                        <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Adopción
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Dar en adopcion</a></li>
-                        <li><a class="dropdown-item" href="#">Adoptar</a></li>
-                      </ul>
-                    </div>
-                        <a href="login-inicio.html" class="loginboton">
-                            <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
-                        </a>
-                    </ul>
-
-                    <div class="nav__close" id="nav-close">
-                        <i class='bx bx-x'></i>
-                    </div>
-
-                    <img src="assets/img/nav-img.png" alt="" class="nav__img">
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-grid-alt'></i>
-                </div>
-
-            </nav>
-        </header>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Adopcion
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dar en adopcion </a></li>
+              <li><a class="dropdown-item" href="#">Adoptar</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
 
         <main class="main">
             <!--==================== HOME ====================-->
@@ -146,15 +145,7 @@
     </div>
 
             <!--==================== OUR NEWSLETTER ====================-->
-            <section class="section newsletter" id="options">
-            <div class="content centered-elements2">
-                <a href="LISTA CASOS-index.php" class="button-add">Buscar mascota</a>
-                <div>
-                            <h6>holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h6>
-                        </div>
-                <a href="login.html" class="button-add">Reportar mascota</a>
-            </div>
-            </section>
+            
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
