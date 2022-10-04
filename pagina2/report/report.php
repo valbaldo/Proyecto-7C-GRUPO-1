@@ -46,7 +46,7 @@
 
                         <div class="input-field">
                             <label>Foto mascota</label>
-                            <input type="file" style="padding-top:10px; font-family: 'Poppins', sans-serif;" required name= "foto">
+                            <input type="file" name="foto" style="padding-top:10px; font-family: 'Poppins', sans-serif;" required>
                         </div>
 
 

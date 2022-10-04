@@ -8,9 +8,10 @@
 	$observacion= $_POST['observacion'];
 	$celular= $_POST['celular'];
 	$localidad=$_POST['localidad'];
+	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 
 	$insertar= "INSERT INTO perdidos(id_localidad) SET localidad('$localidad')";
-	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular')";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular, foto) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular', '$foto')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){
