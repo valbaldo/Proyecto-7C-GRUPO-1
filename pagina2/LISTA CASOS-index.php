@@ -77,7 +77,7 @@
                 <div class="product-container">
                     <h3><?php echo $row["nombre_mascota"]?></h3>
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
-                    <h1>Localidad: </h1>
+                    <h1>Localidad: <?php echo $row["id_localidad"]?></h1>
             
                     <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
                 </div>

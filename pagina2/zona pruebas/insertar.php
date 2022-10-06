@@ -7,6 +7,9 @@
 	$calle= $_POST['calle'];
 	$observacion= $_POST['observacion'];
 	$celular= $_POST['celular'];
+	$id_localidad= $_POST['id_localidad'];
+
+	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular) SET ('$id_localidad')";
 
 	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular')";
 

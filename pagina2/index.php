@@ -1,3 +1,8 @@
+<?php
+    include("assets/php/cn.php");
+    $usuarios="SELECT * FROM perdidos";
+?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -5,10 +10,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
         <!--=============== BOXICONS ===============-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
 
         <!--=============== SWIPER CSS ===============--> 
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
@@ -24,46 +29,59 @@
     </head>
     <body>
         <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">
+        <nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Inicio</a>
-                        </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mascotas desaparecidas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
+              <li><a class="dropdown-item" href="#">Buscar Mascota</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
 
-                        <li class="nav__item">
-                            <a href="#new" class="nav__link">Mascotas desaparecidas</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="#options" class="nav__link">Adoptar</a>
-                        </li>
-
-                        <a href="assets/php/cerrarSesion.php" class="loginboton">
-                            <img src="assets/img/icons8-usuario-de-género-neutro-32.png">
-                        </a>
-
-                    </ul>
-
-                    <div class="nav__close" id="nav-close">
-                        <i class='bx bx-x'></i>
-                    </div>
-
-                    <img src="assets/img/nav-img.png" alt="" class="nav__img">
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-grid-alt'></i>
-                </div>
-
-            </nav>
-        </header>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Adopcion
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dar en adopcion </a></li>
+              <li><a class="dropdown-item" href="#">Adoptar</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
 
         <main class="main">
             <!--==================== HOME ====================-->
@@ -136,21 +154,13 @@
     </div>
 
             <!--==================== OUR NEWSLETTER ====================-->
-            <section class="section newsletter" id="options">
-            <div class="content centered-elements2">
-                <a href="LISTA CASOS.php" class="button-add">Buscar mascota</a>
-                <div>
-                            <h6>holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h6>
-                        </div>
-                <a href="report/report.php" class="button-add">Reportar mascota</a>
-            </div>
-            </section>
+            
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
                     <div class="footer__content">
                         <p class="footer__description1">Buscando Huellitas © 2022</p>
-                        
+
                         <p class="footer__description">Busca, encontra y adopta.</p>
                     </div>
                     </div>
@@ -172,5 +182,6 @@
         
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 </html>
