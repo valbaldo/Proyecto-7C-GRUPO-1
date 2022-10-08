@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apock web design</title>
+    <title>Mi cuenta</title>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-     <link rel="stylesheet" href="assets/css/styles.css">
+  
+
 </head>
 
 <body>
@@ -23,24 +23,10 @@
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<BUTTON href="index.html" id="btn-abrir-popup" CLASS= "btn"> Volver al inicio </BUTTON>
+<BUTTON href="index.html"CLASS= "btn"> Volver al inicio </BUTTON>
 
 
-<div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
-                <h3>Iniciar sesión</h3>
-                <form action="">
-                    <div class="contenedor-inputs">
-                        <input type="text" placeholder="Usuario"required>
-                        <input type="password" placeholder="Contraseña" required>
-                    </div>
-                    <input type="submit" class="btn-submit" value="Iniciar sesion">
-                    <br></br>
-                </form>
-            </div>
-        </div>
-    </div>
+
 
 
 
@@ -197,7 +183,17 @@ h1,h2,h3,h4{
   text-align: center;
 }
 h6{
-  color: white;
+  color: gray;
+ align-items: center;
+ text-align: center;
+ 
+}
+h5{
+  color: var(--verdeo);
+ text-align: center;
+ size: 2rem;
+
+ 
 }
 ul{
   list-style: none;
@@ -607,6 +603,7 @@ img{
   border-radius: 3rem;
   font-weight: var(--font-medium);
   transition: .3s;
+  position: center
 }
 .button2{
   display: inline-block;
@@ -1823,6 +1820,9 @@ Copiar esto
         margin-top: 0;
     }
 }
+
+
+
 </style>
     <!--==========================
 =            html            =
@@ -1841,24 +1841,18 @@ Copiar esto
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Nombre</h3>
+                <h3 class="titulo">Usuario</h3>
+                 <div style="text-align: center"><h6>mail</h6></h6>
+                
                 
             </div>
-            <div class="perfil-usuario-footer">
-                <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Usuario</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Mail</li>
-                    <li><i class="icono fas fa-briefcase"></i> Cantidad de publicaciones</li>
-                    <li><i class="icono fas fa-building"></i> Cargo</li>
-                </ul>
-                <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion.</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento.</li>
-                    <li><i class="icono fas fa-user-check"></i> Registro.</li>
-                    <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
-                </ul>
             </div>
         </div>
+         <body class="p-3 m-0 border-0 bd-example">
+
+    <!-- Example Code -->
+    
+   
     </section>
     <!--====  End of html  ====-->
 
