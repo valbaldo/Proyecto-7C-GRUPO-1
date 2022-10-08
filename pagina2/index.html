@@ -18,6 +18,7 @@
 
         <!--=============== CSS CARROUSEL ===============--> 
         <link rel="stylesheet" href="assets/css/carrousel.css">
+    
 
 
         <title>Buscando Huellitas</title>
@@ -32,22 +33,24 @@
                 </a>
 <BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
 
+
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
                 <h3>Iniciar sesión</h3>
                 <form action="">
                     <div class="contenedor-inputs">
-                        <input type="text" placeholder="Usuario">
-                        <input type="email" placeholder="Contraseña">
+                        <input type="text" placeholder="Usuario"required>
+                        <input type="password" placeholder="Contraseña" required>
                     </div>
                     <input type="submit" class="btn-submit" value="Iniciar sesion">
                     <br></br>
-                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
                 </form>
             </div>
         </div>
     </div>
+
+
 
     <script src="popup.js"></script>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
