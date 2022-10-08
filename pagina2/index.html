@@ -30,13 +30,33 @@
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
+<BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
 
+<div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <h3>Iniciar sesión</h3>
+                <form action="">
+                    <div class="contenedor-inputs">
+                        <input type="text" placeholder="Usuario">
+                        <input type="email" placeholder="Contraseña">
+                    </div>
+                    <input type="submit" class="btn-submit" value="Iniciar sesion">
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
+
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
