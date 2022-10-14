@@ -10,35 +10,14 @@
                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 <title>Buscando Huellitas</title>
 	</head>  
-    <body>
+    <body style="background-color: #bcdcc4;">
         <nav class="navbar fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
 
-
-<div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
-                <h3>Iniciar sesión</h3>
-                <form action="">
-                    <div class="contenedor-inputs">
-                        <input type="text" placeholder="Usuario"required>
-                        <input type="password" placeholder="Contraseña" required>
-                    </div>
-                    <input type="submit" class="btn-submit" value="Iniciar sesion">
-                    <br></br>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <script src="popup.js"></script>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -104,6 +83,10 @@
                 <div class="input-contenedor">
                     <i class="fas fa-key icon"></i>
                     <input type="password" placeholder="Repetir contraseña"  id="pass2" name="pass2" required>
+                </div>
+                <div class="input-img">
+                    <i class="fa-thin fa-image"></i>
+                    <input type="file" placeholder=""  id="pass2" name="pass2" required>
                 </div>
                 <input type="submit" value="Registrarse" class="button" name="registro" form="formRegistro">
                 <p>Valoramos tu privacidad y tu informacion personal no será compartida!</p>
