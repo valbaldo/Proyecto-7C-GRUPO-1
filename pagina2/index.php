@@ -35,16 +35,20 @@
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">Action</button>
-    <button class="dropdown-item" type="button">Another action</button>
-    <button class="dropdown-item" type="button">Something else here</button>
-  </div>
-</div>
+<ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </ul>
+
+          
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
