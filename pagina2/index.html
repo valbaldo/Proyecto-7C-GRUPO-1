@@ -36,14 +36,15 @@
 
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
+               <button <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
                 <h3>Iniciar sesión</h3>
-                <form action="">
+                <form action="assets/php/login-index.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input type="text" placeholder="Usuario"required>
-                        <input type="password" placeholder="Contraseña" required>
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
-                    <input type="submit" class="btn-submit" value="Iniciar sesion">
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                </form>
                     <br></br>
                     <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
                 </form>
