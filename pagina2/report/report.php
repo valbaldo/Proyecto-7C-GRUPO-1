@@ -155,13 +155,13 @@
                 <div class="details address">
 
                             <div>
-                                <p class="lead"> Para mantener el orden y organización de la pagina, NOSOTROS te enviaremos cada un mes un mensaje de Whatsapp para revisar el estado de tu mascota: </p>
+                                <p class="lead"> Para mantener el orden y organización de la pagina, NOSOTROS te enviaremos cada un mes un mail (que esta asociado a tu cuenta)para revisar el estado de tu mascota: </p>
 
                                 <p class="lead">   - Si YA FUE encontrada: procederemos a eliminar la publicacion.</p>
                                 <p class="lead">   - Si aun NO FUE encontrada: la publicacion se mantendra activa.</p>
                                 <p class="lead">   - Si NO recibimos respuesta en un lapso de 7 dias: procederemos a eliminar la publicacion. </p>
 
-                               <p class="lead"> Solicitamos que nos facilites tu numero de telefono celular para poder realizar este seguimiento a tu mascota</p>
+                               <p class="lead"> Tambien Solicitamos que nos facilites tu numero de telefono celular para poder mostrarselo a la persona interesada en contactarse con vos para aportar info.</p>
                             </div>
 
 <div>
