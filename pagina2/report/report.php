@@ -177,7 +177,7 @@
     <div class="form-check">
       <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
       <label class="form-check-label" for="invalidCheck3" required>
-        Acepto que me envien mensajes por Whatsapp para verificar el estado de mi mascota.
+        Acepto que me envien mails para verificar el estado de mi mascota.
       </label>
       
     </div>
