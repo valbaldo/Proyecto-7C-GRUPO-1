@@ -66,8 +66,6 @@
 
         <main class="main">
             <!--==================== HOME ====================-->
-           <div>
-           </div>
            <div class="page-content">
             <?php
             $resultado=mysqli_query($conexion, $usuarios);

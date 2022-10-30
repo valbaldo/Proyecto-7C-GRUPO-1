@@ -2,16 +2,19 @@
 	include ("cn.php");
 
 	$nombre_mascota= $_POST['nombre_mascota'];
+	$edad= $_POST['edad'];
+	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+	$sexo= $_POST['sexo'];
+	$especie= $_POST['especie'];
 	$raza= $_POST['raza'];
+	$localidad= $_POST['localidad'];
 	$barrio= $_POST['barrio'];
 	$calle= $_POST['calle'];
+	$fecha= $_POST['fecha'];
+	$chapita= $_POST['chapita'];
 	$observacion= $_POST['observacion'];
-	$celular= $_POST['celular'];
-	$localidad=$_POST['localidad'];
-	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 
-	$insertar= "INSERT INTO perdidos(id_localidad) SET localidad('$localidad')";
-	$insertar= "INSERT INTO perdidos(nombre_mascota, raza, barrio, calle, observacion, celular, foto) VALUES ('$nombre_mascota','$raza', '$barrio','$calle','$observacion','$celular', '$foto')";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion) VALUES ('$nombre_mascota','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha','$chapita','$observacion')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

@@ -10,17 +10,19 @@
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
         <!--=============== BOXICONS ===============-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
         <!--=============== SWIPER CSS ===============--> 
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
         <!--=============== CSS ===============--> 
-        <link rel="stylesheet" href="assets/css/styles - copia.css">
+        <link rel="stylesheet" href="assets/css/style-perdidos-lista.css">
 
-        
         <!--=============== CSS CARROUSEL ===============--> 
         <link rel="stylesheet" href="assets/css/carrousel.css">
+    
 
 
         <title>Buscando Huellitas</title>
@@ -28,8 +30,8 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -69,7 +71,7 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="LISTA CASOS-index.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
@@ -96,13 +98,13 @@
             <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Adoptar</a></li>
+                <li><a class="dropdown-item" href="adoptar-lista.php">Adoptar</a></li>
                 <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-index.php" method="POST">
+                    <form action="assets/php/login-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -126,7 +128,7 @@
 
         <main class="main">
             <!--==================== HOME ====================-->
-           <div class="page-content">
+            <div class="page-content">
             <?php
             $resultado=mysqli_query($conexion, $usuarios);
             while($row=mysqli_fetch_assoc($resultado)){
@@ -141,19 +143,50 @@
             <?php
             }
             ?>
+
         <div class="product-container">
-            <h3>Nombre Mascota</h3>
+            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
+            <img class="fotos" src="images/product-2.jpg" />
+            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
+            <button class="button-add" onclick="add('product-2', 300)">Ver mas</button>
+        </div>
+
+        <div class="product-container">
+            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
+            <img class="fotos" src="images/product-3.jpg" />
+            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
+            <button class="button-add" onclick="add('product-3', 250)">Ver mas</button>
+        </div>
+
+        <div class="product-container">
+            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
+            <img class="fotos" src="images/product-4.jpg" />
+            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
+            <button class="button-add" onclick="add('product-4', 200)">Ver mas</button>
+        </div>
+
+        <div class="product-container">
+            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
+            <img class="fotos" src="images/product-5.jpg" />
+            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
+            <button class="button-add" onclick="add('product-5', 10)">Ver mas</button>
+        </div>
+
+        <div class="product-container">
+            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
             <img class="fotos" src="images/product-6.jpg" />
-            <h1 style="font-size: 1.2rem;">Localidad:</h1>
+            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
             <button class="button-add" onclick="add('product-6', 650)">Ver mas</button>
         </div>
-            </div>
+
+    </div>
 </body>
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
                     <div class="footer__content">
-                        <p class="footer__description1">Buscando Huellitas</p>
+                        <p class="footer__description1">Buscando Huellitas © 2022</p>
+
                         <p class="footer__description">Busca, encontra y adopta.</p>
                     </div>
                     </div>
@@ -176,5 +209,5 @@
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    </body>
+    
 </html>

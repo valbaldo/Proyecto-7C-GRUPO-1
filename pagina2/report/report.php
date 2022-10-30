@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
         <header>Reportar Mascota</header>
 
         <form method="post" action="insertar.php" enctype="multipart/form-data">
-            <div class="form first">    
+            <div class="form first">
                 <div class="details personal">
                     <span class="title">Datos de la mascota</span>
 
@@ -35,11 +35,11 @@
 
                        <div class="input-field">
                             <label>Edad</label>
-                            <select required>
-                                <option disabled selected>Seleccionar Edad</option>
-                                <option>Cachorro (Meses a 4 años)</option>
-                                <option>Adulto (5 a 12 años)</option>
-                                <option>Vejez (13 a 20+ años)</option>
+                            <select name="edad" required>
+                                <option disabled selected value="">Seleccionar edad</option>
+                                <option value="CACHORRO">Cachorro (Meses a 4 años)</option>
+                                <option value="ADULTO">Adulto (5 a  12 años)</option>
+                                <option value="VEJEZ">Vejez (13 a 20+ años)</option>
                             </select>
                         </div>
 
@@ -54,19 +54,19 @@
 
                             <label>Sexo</label>
                             <select required name="sexo">
-                                <option disabled selected>Seleccionar sexo</option>
-                                <option>Hembra</option>
-                                <option>Macho</option>
+                                <option disabled selected value="">Seleccionar sexo</option>
+                                <option value="HEMBRA">Hembra</option>
+                                <option value="MACHO">Macho</option>
                             </select>
                         </div>
 
                         <div class="input-field">
                             <label>Especie</label>
                             <select required name="especie">
-                                <option disabled selected>Seleccionar Especie</option>
-                                <option>Perro</option>
-                                <option>Gato</option>
-                                <option>Otro</option>
+                                <option disabled selected value="">Seleccionar Especie</option>
+                                <option value="PERRO">Perro</option>
+                                <option value="GATO">Gato</option>
+                                <option value="OTRO">Otro</option>
                             </select>
                         </div>
 
@@ -84,31 +84,31 @@
                         <div class="input-field">
                             <label>Localidad</label>
                               <select required name="localidad">
-                                <option disabled selected>Seleccionar localidad</option>
-                                <option>Almirante Brown</option>
-                                <option>Avellaneda</option>
-                                <option>Berazategui</option>
-                                  <option>Esteban Echeverría</option>
-                                <option>Ezeiza</option>
-                                <option>Florencio Varela</option>
-                                  <option>General San Martín</option>
-                                <option>Hurlingham</option>
-                                <option>Ituzaingó</option>
-                                  <option>José C. Paz</option>
-                                <option>La Matanza</option>
-                                <option>Lanús</option>
-                                <option>Lomas de Zamora</option>
-                                <option>Malvinas Argentinas</option>
-                                <option>Merlo</option>
-                                  <option>Moreno</option>
-                                <option>Morón</option>
-                                <option>Quilmes</option>
-                                  <option>San Fernando</option>
-                                <option>San Isidro</option>
-                                <option>San Miguel</option>
-                                  <option>Tigre</option>
-                                <option>Tres de Febrero</option>
-                                <option>Vicente López</option>
+                                <option disabled selected value="">Seleccionar localidad</option>
+                                <option value="ALMIRANTE BROWN">Almirante Brown</option>
+                                <option value="AVELLANEDA">Avellaneda</option>
+                                <option value="BERAZATEGUI">Berazategui</option>
+                                <option value="ESTEBAN ECHEVERRIA">Esteban Echeverría</option>
+                                <option value="EZEIZA">Ezeiza</option>
+                                <option value="FLORENCIA VARELA">Florencio Varela</option>
+                                <option value="GENERAL SAN MARTIN">General San Martín</option>
+                                <option value="HURLINGHAM">Hurlingham</option>
+                                <option value="ITUZAINGO">Ituzaingó</option>
+                                <option value="JOSE C. PAZ">José C. Paz</option>
+                                <option value="LA MATANZA">La Matanza</option>
+                                <option value="LANUS">Lanús</option>
+                                <option value="LOMAS DE ZAMORA">Lomas de Zamora</option>
+                                <option value="MALVINAS ARGENTINAS">Malvinas Argentinas</option>
+                                <option value="MERLO">Merlo</option>
+                                <option value="MORENO">Moreno</option>
+                                <option value="MORON">Morón</option>
+                                <option value="QUILMES">Quilmes</option>
+                                <option value="SAN FERNANDO">San Fernando</option>
+                                <option value="SAN ISIDRO">San Isidro</option>
+                                <option value="SAN MIGUEL">San Miguel</option>
+                                <option value="TIGRE">Tigre</option>
+                                <option value="TRES DE FEBRERO">Tres de Febrero</option>
+                                <option value="VICENTE LOPEZ">Vicente López</option>
                            </select>
                         </div>
 
@@ -130,14 +130,14 @@
                         <div class="input-field">
                             <label>¿Tenia chapita?</label>
                             <select required name="chapita">
-                                <option disabled selected>Seleccionar opcion</option>
-                                <option>Si</option>
-                                <option>No</option>
+                                <option disabled selected value="">Seleccionar opcion</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
                             </select>
                         </div>
 
                         <div class="input-field">
-                            <label>Obsevaciones/acalaraciones extra</label>
+                            <label>Obsevaciones/aclaraciones extra</label>
                             <input type="text" placeholder="Ingresar observaciones" required name="observacion">
                         </div>
 
@@ -193,7 +193,7 @@
                             <span class="btnText">Atras</span>
                         </div>
                         
-                        <button class="sumbit">
+                        <button type="submit" name="enviar" class="sumbit">
                             <span class="btnText">Enviar formulario</span>
                             <i class="uil uil-navigator"></i>
                         </button>
