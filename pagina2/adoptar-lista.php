@@ -138,7 +138,7 @@
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
                     <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["barrio"]?></h1>
             
-                    <a href="publicacionmascotaenadopcion.php"><button class="button-add">Ver mas</button></a>
+                    <a href="publicacionmascotaenadopcion.php?<?php echo $row["ID_adopcion"]?>"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }
