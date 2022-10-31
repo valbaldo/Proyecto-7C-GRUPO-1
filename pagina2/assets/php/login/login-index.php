@@ -1,44 +1,7 @@
 <?php
 
 include('config.php');
-
 session_start();
-
-if(isset($_GET['cerrar_sesion'])){
-    session_unset();
-
-    session_destroy();
-}
-if(isset($_SESSION['rol'])){
-    switch ($_SESSION['rol']) {
-        case '1':
-            header('../../../index.php')
-        break;
-
-        case '2':
-            header('../../../index.php')
-        break;
-
-        default:
-    }
-}
-
-if (isset($_POST['username']) && isset($_POST['pass'])) {
-    $username = $_POST['username'];
-    $pass = $_POST['pass'];
-    $query = $db->connect()->prepare("SELECT * FROM usuarios WHERE username =:usuario");
-    $query->execute(['username' => $username, 'pass' => $pass]);
-
-    $row= $query->fetch->fetch(PDO::FETCH_NUM);
-    if ($row == true) {
-        // code...
-
-    }else{
-        echo "string";
-    }
-}
-
-
 
 if(isset($_POST['login'])){
     $username = $_POST['username'];
@@ -60,7 +23,7 @@ if(isset($_POST['login'])){
         if(password_verify($pass,$resultado['pass'])){ 
             $_SESSION['IdUsuario'] = $resultado['ID'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location: ../../../index.php");
+           header("Location: ../../../index-log.php");
         }
         else{
             echo'<script type="text/javascript">

@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    $usuarios="SELECT * FROM perdidos order by id_perdido desc";
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -135,10 +135,10 @@
             ?>
                 <div class="product-container">
                     <h3><?php echo $row["nombre_mascota"]?></h3>
-                    <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
+                    <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>"/>
                     <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["localidad"]?></h1>
             
-                    <a href="publicacionmascotaperdida.php"><button class="button-add">Ver mas</button></a>
+                    <a href="publicacionmascotaperdida.php?<?php echo $row["ID_perdido"]?>"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }
