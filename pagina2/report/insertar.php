@@ -10,11 +10,11 @@
 	$localidad= $_POST['localidad'];
 	$barrio= $_POST['barrio'];
 	$calle= $_POST['calle'];
-	$fecha= $_POST['fecha'];
+	$fecha_perdida= date('d-m-Y' strtotime($_POST['fecha_perdida'))];
 	$chapita= $_POST['chapita'];
 	$observacion= $_POST['observacion'];
 
-	$insertar= "INSERT INTO perdidos(nombre_mascota, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion) VALUES ('$nombre_mascota','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha','$chapita','$observacion')";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha_perdida, chapita, observacion) VALUES ('$nombre_mascota','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha','$chapita','$observacion')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

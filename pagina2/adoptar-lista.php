@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    $usuarios="SELECT * FROM adopcion";
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -134,51 +134,15 @@
             while($row=mysqli_fetch_assoc($resultado)){
             ?>
                 <div class="product-container">
-                    <h3><?php echo $row["nombre_mascota"]?></h3>
+                    <h3><?php echo $row["especie"]?></h3>
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
-                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["id_localidad"]?></h1>
+                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["barrio"]?></h1>
             
-                    <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
+                    <a href="publicacionmascotaenadopcion.php"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }
             ?>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-2.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-2', 300)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-3.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-3', 250)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-4.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-4', 200)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-5.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-5', 10)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-6.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-6', 650)">Ver mas</button>
-        </div>
-
     </div>
 </body>
         <!--==================== FOOTER ====================-->

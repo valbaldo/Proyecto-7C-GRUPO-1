@@ -31,7 +31,7 @@
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -42,7 +42,7 @@
             <div class="popup" id="popup">
                <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
                 <h3>Iniciar sesión</h3>
-                <form action="assets/php/login-index.php" method="POST">
+                <form action="assets/php/login/login-perdidos.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -78,7 +78,7 @@
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-report.php" method="POST">
+                    <form action="assets/php/login/login-perdidos-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -104,7 +104,7 @@
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-adoptar.php" method="POST">
+                    <form action="assets/php/login/login-perdidos-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -136,49 +136,13 @@
                 <div class="product-container">
                     <h3><?php echo $row["nombre_mascota"]?></h3>
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
-                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["id_localidad"]?></h1>
+                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["localidad"]?></h1>
             
-                    <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
+                    <a href="publicacionmascotaperdida.php"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }
             ?>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-2.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-2', 300)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-3.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-3', 250)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-4.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-4', 200)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-5.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-5', 10)">Ver mas</button>
-        </div>
-
-        <div class="product-container">
-            <h3 style="font-size: 1.3rem; font-weight: var(--font-semi-bold); text-align: left;">Nombre Mascota</h3>
-            <img class="fotos" src="images/product-6.jpg" />
-            <h1 style="color: var(--verdeo); font-size: 1.2rem; font-weight: var(--font-semi-bold); text-align: left;">Localidad:</h1>
-            <button class="button-add" onclick="add('product-6', 650)">Ver mas</button>
-        </div>
-
     </div>
 </body>
         <!--==================== FOOTER ====================-->

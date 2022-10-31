@@ -1,3 +1,7 @@
+<?php
+    include("assets/php/cn.php");
+    $usuarios="SELECT * FROM perdidos";
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -14,7 +18,7 @@
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
         <!--=============== CSS ===============--> 
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/style-perdidos-lista.css">
 
         <!--=============== CSS CARROUSEL ===============--> 
         <link rel="stylesheet" href="assets/css/carrousel.css">
@@ -26,8 +30,8 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -38,7 +42,7 @@
             <div class="popup" id="popup">
                <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
                 <h3>Iniciar sesión</h3>
-                <form action="assets/php/login/login-index.php" method="POST">
+                <form action="assets/php/login-perdidos.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -74,7 +78,7 @@
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-index-report.php" method="POST">
+                    <form action="assets/php/login-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -100,7 +104,7 @@
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login/login-index-adoptar.php" method="POST">
+                    <form action="assets/php/login-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -124,76 +128,23 @@
 
         <main class="main">
             <!--==================== HOME ====================-->
-            <section class="home container" id="home">
-                <div class="swiper home-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- HOME SLIDER 1 -->
-                            <div class="home__content grid">
-                                <div class="home__group">
-                                    <img src="assets/img/home1-img.png" alt="" class="home__img">
-                                </div>
-    
-                                <div class="home__data">
-                                    <h3 class="home__subtitle"></h3>
-                                    <h1 class="home__title">Buscando<br> Huellitas <br></h1>
-                                    <p class="home__description">Somos un grupo de personas que comparten un gran amor por los animales y por lo tanto buscamos su bienestar, de esto surge nuestra pagina. Sabemos que existen muchas agrupaciones y personas dedicadas al rescate animal.  Buscando Huellitas no pretende ser una de ellas, sino ser una herramienta para ellas, recibiendo reportes de mascotas que se han perdido o permitir dar en adopcion y vincular a los dueños y el adoptante/rescatista entre sí.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-           
-
-            <!--==================== NEW ARRIVALS ====================-->
-                   
-<section class="home container" id="new">
-    <div class="content centered-elements">
-                    <h2>Mascotas desaparecidas</h2>
-                </div>
-            <div class="slider">
-        <input type="radio" name="testimonial" id="t-1">
-        <input type="radio" name="testimonial" id="t-2">
-        <input type="radio" name="testimonial" id="t-3" checked>
-        <input type="radio" name="testimonial" id="t-4">
-        <input type="radio" name="testimonial" id="t-5">
-        <div class="testimonials">
-            <label class="item" for="t-1">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-2">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-3">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-4">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-5">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-        </div>
-        <div class="dots">
-            <label for="t-1"></label>
-            <label for="t-2"></label>
-            <label for="t-3"></label>
-            <label for="t-4"></label>
-            <label for="t-5"></label>
-        </div>
-    </div>
-
-            <!--==================== OUR NEWSLETTER ====================-->
+            <div class="page-content">
+            <?php
+            $resultado=mysqli_query($conexion, $usuarios);
+            while($row=mysqli_fetch_assoc($resultado)){
+            ?>
+                <div class="product-container">
+                    <h3><?php echo $row["nombre_mascota"]?></h3>
+                    <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
+                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["localidad"]?></h1>
             
+                    <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
+                </div>
+            <?php
+            }
+            ?>
+    </div>
+</body>
         <!--==================== FOOTER ====================-->
             <footer class="footer section">
                 <div class="footer__container container grid">
@@ -222,5 +173,5 @@
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    </body>
+    
 </html>

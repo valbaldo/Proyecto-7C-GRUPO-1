@@ -27,13 +27,13 @@ if(isset($_POST['registro'])){
         if(!$resultadoRegistro){
             echo'<script type="text/javascript">
             alert("No se pudo registrar el usuario");
-            window.location.href="../../report/report.php";
+            window.location.href="../../register.html";
             </script>';
         }
         else{
             echo'<script type="text/javascript">
             alert("Usuario registrado!");
-            window.location.href="../../report/report.php";
+            window.location.href="../../index.php";
             </script>';
         }
         
