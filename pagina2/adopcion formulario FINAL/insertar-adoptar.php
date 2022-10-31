@@ -23,7 +23,7 @@
 	if($resultado){
             echo'<script type="text/javascript">
             alert("Reporte enviado");
-            window.location.href="../index.php";
+            window.location.href="../index-log.php";
             </script>';
 	} else{
             echo'<script type="text/javascript">
