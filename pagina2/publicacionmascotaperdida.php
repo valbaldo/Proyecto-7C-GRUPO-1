@@ -1,8 +1,15 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    
+  $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $parts = parse_url($actual_link);
+    parse_str ($parts['query'], $query);
+
+    $usuarios="SELECT * FROM perdidos WHERE ID_perdido = ".$parts['query'];
+
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
+
 ?>
 
 <!DOCTYPE html>

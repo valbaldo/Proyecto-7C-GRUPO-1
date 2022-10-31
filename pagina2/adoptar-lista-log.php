@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    $usuarios="SELECT * FROM adopcion order by id_adopcion desc";
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -63,7 +63,7 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
-
+            <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
@@ -81,6 +81,7 @@
                     </div>
                     </div>
                     </div>
+                    <script type="text/javascript" src="alerta.js"></script>
             </ul>
             <!--==================== SEGUNDO BOTON ====================-->
             <div style="margin-top: 1rem;">
@@ -88,32 +89,15 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php">Dar en adopcion</a></li>
-                    <div class="overlay" id="overlay2">
-                    <div class="popup" id="popup2">
-                    <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
-                    <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login/login-index-adoptar.php" method="POST">
-                    <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
-                        <input name="pass" type="password" placeholder="Contraseña" required>
-                    </div>
-                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
-                    </form>
-                    <br></br>
-                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
-                    </form>
-                    </div>
-                    </div>
-                    </div>
-                    <script type="text/javascript" src="alerta2.js"></script>
+                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php" id="btn-abrir-popup2">Dar en adopcion</a></li>
+            </ul> 
             </div>
         </div>
         
     </div>
     </div>
   </div>
-</nav>
+</nav>  
 
         <main class="main">
             <!--==================== HOME ====================-->
@@ -123,11 +107,11 @@
             while($row=mysqli_fetch_assoc($resultado)){
             ?>
                 <div class="product-container">
-                    <h3><?php echo $row["nombre_mascota"]?></h3>
+                    <h3><?php echo $row["especie"]?></h3>
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
-                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["localidad"]?></h1>
+                    <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["barrio"]?></h1>
             
-                    <button class="button-add" onclick="add('product-1', 50)">Ver mas</button>
+                    <a href="publicacionmascotaenadopcion.php?<?php echo $row["ID_adopcion"]?>"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }

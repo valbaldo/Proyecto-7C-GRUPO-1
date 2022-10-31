@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM adopcion";
+    $usuarios="SELECT * FROM adopcion order by id_adopcion desc";
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -31,7 +31,7 @@
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -138,7 +138,7 @@
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" />
                     <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["barrio"]?></h1>
             
-                    <a href="publicacionmascotaenadopcion.php"><button class="button-add">Ver mas</button></a>
+                    <a href="publicacionmascotaenadopcion.php?<?php echo $row["ID_adopcion"]?>"><button class="button-add">Ver mas</button></a>
                 </div>
             <?php
             }

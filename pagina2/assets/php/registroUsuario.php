@@ -20,7 +20,7 @@ if(isset($_POST['registro'])){
         </script>';
     }
     else{
-        $consultaRegistro = $conn -> prepare("INSERT INTO usuarios(username, pass) VALUES (:usuario , :pass)");
+        $consultaRegistro = $conn -> prepare("INSERT INTO usuarios(username, pass, tipo) VALUES (:usuario , :pass, 2)");
         $consultaRegistro -> bindParam("usuario",$usuario,PDO::PARAM_STR);
         $consultaRegistro -> bindParam("pass",$passCifrada,PDO::PARAM_STR);
         $resultadoRegistro = $consultaRegistro -> execute();
