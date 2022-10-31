@@ -1,4 +1,99 @@
-/*=============== GOOGLE FONTS ===============*/
+<?php
+    include("assets/php/cn.php");
+    
+  $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $parts = parse_url($actual_link);
+    parse_str ($parts['query'], $query);
+
+    $usuarios="SELECT * FROM adopcion WHERE ID_adopcion = ".$parts['query'];
+
+    $resultado=mysqli_query($conexion, $usuarios);
+    $row=mysqli_fetch_assoc($resultado);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscando Huellitas</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+
+</head>
+
+<body>
+  <title>Buscando Huellitas</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index-log.php">
+                    <img src="assets/img/logo.png" alt="" class="nav__logo-img"> 
+                    Buscando Huellitas
+                </a>
+
+
+
+
+
+
+
+    <script src="popup.js"></script>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mascotas desaparecidas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
+              <li><a class="dropdown-item" href="#">Buscar Mascota</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Adopcion
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dar en adopcion </a></li>
+              <li><a class="dropdown-item" href="#">Adoptar</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
 @import "bootstrap/scss/bootstrap";
 /*=============== VARIABLES CSS ===============*/
@@ -49,7 +144,7 @@
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
   --mb-1: 1rem;
-
+  --mb-1-5: 1.5rem;
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
 
@@ -98,13 +193,21 @@ body{
 
 h1,h2,h3,h4{
   color: var(--verdeo);
-  font-size: 1.2rem;
   font-weight: var(--font-semi-bold);
-  text-align: left;
+  text-align: center;
 }
-
 h6{
-  color: white;
+  color: gray;
+ align-items: center;
+ text-align: center;
+ 
+}
+h5{
+  color: var(--verdeo);
+ text-align: center;
+ size: 2rem;
+
+ 
 }
 ul{
   list-style: none;
@@ -148,70 +251,9 @@ img{
   display: grid;
 }
 
-/*=============== HEADER ===============*//*=============== HEADER ===============*//*=============== HEADER ===============*//*=============== HEADER ===============*/
-
-
-.page-content {
-   
-    margin-top: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
 .main{
   overflow: hidden; /*For animation*/
 }
-
-.product-container {
-  border-radius: 25px;
-    margin: 15px;
-    padding: 2px 16px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-    background-color: white;
-}
-
-.product-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-
-.product-container img {
-    width: 300px;
-}
-
-.product-container h1 {
-    margin-bottom: 10px;
-    margin-left: 15px;
-}
-
-.fotos{
-   /* cambia estos dos valores para definir el tamaño de tu círculo */
-    height: 300px;
-    width: 100px;
-    /* los siguientes valores son independientes del tamaño del círculo */
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
-}
-
-.button-add {
-    background-color: white;
-    color: var(--verdeo);
-    border: 2px solid;
-    border-color: var(--verdeo);
-    transition-duration: 0.4s;
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
-}}
-  
-.button-add:hover {
-    background-color: var(--verdeo); /* Green */
-    color: white;
-}
-/*=============== HEADER ===============*//*=============== HEADER ===============*//*=============== HEADER ===============*/
 
 /*=============== HEADER ===============*/
 .header{
@@ -243,16 +285,7 @@ img{
     flex-wrap:initial;
 
 }
-.nav-link {
-  
-    display: initial;
-    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-    font-size: var(--bs-nav-link-font-size);
-    font-weight: var(--bs-nav-link-font-weight);
-    color: var(--bs-nav-link-color);
-    text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-}
+
 .nav{
   height: var(--header-height);
   display: flex;
@@ -418,14 +451,8 @@ img{
   text-transform: uppercase;
   font-weight: var(--font-black);
   transition: .4s;
-  margin-left: 5rem;
 }
-.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-    display: inherit;
-    flex-wrap: inherit;
-    align-items: baseline;
-    justify-content: space-between;
-}
+
 .nav__link:hover{
   color: var(--text-color);
 }
@@ -590,6 +617,7 @@ img{
   border-radius: 3rem;
   font-weight: var(--font-medium);
   transition: .3s;
+  position: center
 }
 .button2{
   display: inline-block;
@@ -755,6 +783,26 @@ img{
   text-align: center;
 }
 
+.button-add {
+    background-color: white;
+    color: var(--verdeo);
+    border: 2px solid;
+     border-color: var(--verdeo); /* Green */
+    transition-duration: 0.4s;
+    position: center;
+   display: inline-block;
+  padding: 1rem 1.75rem;
+  border-radius: 3rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+    bottom: 10px;
+    white-space: 5rem;
+}
+  
+.button-add:hover {
+    background-color: var(--verdeo); /* Green */
+    color: white;
+}
 
 button {
     font-size: 16px;
@@ -1551,3 +1599,323 @@ button {
 #t-5:checked ~ .testimonials label[for="t-5"] {
     z-index: 4;
 }
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #404040;
+    font-family: 'Poppins', sans-serif;
+  --verdeclaro: 135;
+  --verdeoscuro:168 ;
+  --first-color: hsl(var(--hue), 91%, 54%);
+  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --title-color: var(--verdeo);
+  --text-color: var(--verdeo);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --second-color: hsl(var(--verdeclaro), 32%, 80%);
+  --verdeo: hsl(var(--verdeoscuro), 97%, 13%);
+    --mb-1: 1rem;
+}
+}
+
+/*=====================================
+estilos de la utilidad
+Copiar esto
+=====================================*/
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--second-color);
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 17rem;
+    background: var(--second-color);
+    border-radius: 0 0 20px 20px;
+    /*
+    background-image: url('http://localhost/multimedia/png/user-portada-3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
+    margin-right: 1rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 10px 0;
+}
+
+.seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.seccion-perfil-usuario .redes-sociales {
+    position: absolute;
+    right: calc(0px - 50px - 1rem);
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes {
+    border: 0;
+    background-color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    font-size: 1.3rem;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+    margin-top: .5rem;
+}
+
+.seccion-perfil-usuario .boton-redes.facebook {
+    background-color: #5955FF;
+}
+
+.seccion-perfil-usuario .boton-redes.twitter {
+    background-color: #35E1BF;
+}
+
+.seccion-perfil-usuario .boton-redes.instagram {
+    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+}
+
+/* adactacion a dispositivos */
+@media (max-width: 750px) {
+    .seccion-perfil-usuario .lista-datos {
+        width: 50%;
+    }
+
+    .seccion-perfil-usuario .perfil-usuario-portada,
+    .seccion-perfil-usuario .perfil-usuario-body {
+        width: 95%;
+    }
+
+    .seccion-perfil-usuario .redes-sociales {
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center
+    }
+
+    .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+}
+
+
+
+</style>
+    <!--==========================
+=            html            =
+===========================-->
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"></h3>
+    
+                
+                
+            </div>
+            </div>
+        </div>
+                <div class="perfil-usuario-footer" style="width: 40rem;">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-briefcase"></i> Zona/barrio: <?php echo $row["barrio"]?></li>
+                   
+                    <li><i class="icono fas fa-map-signs"></i> Edad: <?php echo $row["edad"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Tamaño: <?php echo $row["tamanio"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Sexo: <?php echo $row["edad"]?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Especie: <?php echo $row["especie"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Vacunas: <?php echo $row["cuales_vacunas"]?></li>
+          
+                    <li><i class="icono fas fa-briefcase"></i> Enfermedades: <?php echo $row["cuales_problemas"]?></li>
+                   
+                    <li><i class="icono fas fa-briefcase"></i> Obsevaciones: <?php echo $row["observacion"]?></li>
+                    <br></br>
+                    
+                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto </BUTTON> </div>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <br></br>
+  
+            <div style="padding: 15px;"><a href="adoptar-lista.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
+
+
+<div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
+                <h3>Nombre completo</h3>
+
+                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
+                    <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="popup.js"></script>
+         <body class="p-3 m-0 border-0 bd-example">
+
+    <!-- Example Code -->
+    
+   
+    </section>
+    <!--====  End of html  ====-->
+
+
+<script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--====  End of tarjeta  ====-->
+</body>
+
+</html>

@@ -1,4 +1,99 @@
-/*=============== GOOGLE FONTS ===============*/
+<?php
+    include("assets/php/cn.php");
+    
+  $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $parts = parse_url($actual_link);
+    parse_str ($parts['query'], $query);
+
+    $usuarios="SELECT * FROM perdidos WHERE ID_perdido = ".$parts['query'];
+
+    $resultado=mysqli_query($conexion, $usuarios);
+    $row=mysqli_fetch_assoc($resultado);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscando Huellitas</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+
+</head>
+
+<body>
+  <title>Buscando Huellitas</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index-log.php">
+                    <img src="assets/img/logo.png" alt="" class="nav__logo-img"> 
+                    Buscando Huellitas
+                </a>
+
+
+
+
+
+
+
+    <script src="popup.js"></script>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mascotas desaparecidas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
+              <li><a class="dropdown-item" href="#">Buscar Mascota</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Adopcion
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dar en adopcion </a></li>
+              <li><a class="dropdown-item" href="#">Adoptar</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
 @import "bootstrap/scss/bootstrap";
 /*=============== VARIABLES CSS ===============*/
@@ -77,322 +172,10 @@
   padding: 0;
   
 }
-.card:hover {
-    box-shadow: none;
-    transform: scale(1.1);
-}
- 
-.card .numero {
-    position: absolute;
-}
- 
-.card .numero h5{
-    padding: 35px 30px;
-    font-size: 35px;
-}
- 
-.card .titulo {
-    position: absolute;
-}
- 
-.card .titulo p {
-    padding: 90px 30px;
-    color: rgba(0,0,0,.7);
-    font-weight: bold;
-}
- 
-.card i {
-    position: absolute;
-    padding: 50px 200px;
-    font-size: 50px;
-    color: #CF2B2B;
-}
- 
-.card2 {
-    position: absolute;
-    background: #fff;
-    width: 300px;
-    height: 150px;
-    top: 120px;
-    left: 635px;
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    font-family: 'Poppins', sans-serif;
-    transition: 0.2s;
-    cursor: pointer;
-}
- 
-.card2:hover {
-    box-shadow: none;
-    transform: scale(1.1);
-}
- 
-.card2 .numero {
-    position: absolute;
-}
- 
-.card2 .numero h5{
-    padding: 35px 30px;
-    font-size: 35px;
-}
- 
-.card2 .titulo {
-    position: absolute;
-}
- 
-.card2 .titulo p {
-    padding: 90px 30px;
-    color: rgba(0,0,0,.7);
-    font-weight: bold;
-}
- 
-.card2 i {
-    position: absolute;
-    padding: 50px 200px;
-    font-size: 50px;
-    color: #CF2B2B;
-}
- 
- 
-.card3 {
-    position: absolute;
-    background: #CF2B2B;
-    width: 300px;
-    height: 150px;
-    top: 120px;
-    left: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,.7);
-    font-family: 'Poppins', sans-serif;
-    transition: 0.2s;
-    cursor: pointer;
-}
- 
-.card3:hover {
-    box-shadow: none;
-    transform: scale(1.1);
-}
- 
-.card3 .numero {
-    position: absolute;
-}
- 
-.card3 .numero h5{
-    padding: 35px 30px;
-    font-size: 35px;
-    color: #fff;
-}
- 
-.card3 .titulo {
-    position: absolute;
-}
- 
-.card3 .titulo p {
-    padding: 90px 30px;
-    color: rgba(255,255,255,.9);
-    font-weight: bold;
-}
- 
-.card3 i {
-    position: absolute;
-    padding: 50px 0;
-    margin: 0 200px;
-    font-size: 50px;
-    color: #fff;
-}
- 
- 
- 
-.visitas-container {
-    margin: 0 35px;
-    position: absolute;
-    top: 400px;
-    left: 270px;
-}
- 
- 
-.semi-circle-visitas {
-    width: 250px;
-    height: 125px;
-    --percentage:0;
-    --fill:#404040;
-    position: relative;
-    color: #fff;
-    font-weight: bold;
-    font-size: 23px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
-}
- 
-.semi-circle-visitas::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 250px;
-    border: 30px solid;
-    box-sizing: border-box;
-    border-color: #404040 #404040 #21AF08 #21AF08;
-    border-radius: 50%;
-    transform: rotate( calc(1deg * ( -45 + var(--percentage) * 1.8 ) ));
-    animation: animation-per 2s forwards;
-}
- 
-@keyframes animation-per {
-    0% {
-        transform: rotate(-45deg);
-    }
-    50% {
-        transform: rotate(135deg);
-    }
-}
- 
-.semi-circle-visitas p {
-    color: #21AF08;
-    font-weight: 600;
-}
- 
- 
-.productos-container {
-    margin: 0 35px;
-    position: absolute;
-    top: 400px;
-    left: 635px;
-}
- 
- 
-.semi-circle-productos {
-    width: 250px;
-    height: 125px;
-    --percentage:0;
-    --fill:#404040;
-    position: relative;
-    color: #fff;
-    font-weight: bold;
-    font-size: 23px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
-}
- 
-.semi-circle-productos::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 250px;
-    border: 30px solid;
-    box-sizing: border-box;
-    border-color: #404040 #404040 #CF2B2B #CF2B2B;
-    border-radius: 50%;
-    transform: rotate( calc(1deg * ( -45 + var(--percentage) * 1.8 ) ));
-    animation: animation-per 2s forwards;
-}
- 
-@keyframes animation-per {
-    0% {
-        transform: rotate(-45deg);
-    }
-    50% {
-        transform: rotate(135deg);
-    }
-}
- 
-.semi-circle-productos p {
-    color: #CF2B2B;
-    font-weight: 600;
-}
- 
- 
- 
-.ganancias-container {
-    margin: 0 35px;
-    position: absolute;
-    top: 400px;
-    left: 1000px;
-}
- 
- 
-.semi-circle-ganancias {
-    width: 250px;
-    height: 125px;
-    --percentage:0;
-    --fill:#404040;
-    position: relative;
-    color: #fff;
-    font-weight: bold;
-    font-size: 23px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
-}
- 
-.semi-circle-ganancias::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 250px;
-    border: 30px solid;
-    box-sizing: border-box;
-    border-color: #404040 #404040 #0468CB #0468CB;
-    border-radius: 50%;
-    transform: rotate( calc(1deg * ( -45 + var(--percentage) * 1.8 ) ));
-    animation: animation-per 2s forwards;
-}
- 
-@keyframes animation-per {
-    0% {
-        transform: rotate(-45deg);
-    }
-    50% {
-        transform: rotate(135deg);
-    }
-}
- 
-.semi-circle-ganancias p {
-    color: #0468CB;
-    font-weight: 600;
-}
- 
- #circle {
-    background: lightblue;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
+
 html{
   scroll-behavior: smooth;
 }
-
-.general{
-
-margin-left: 275px;
-margin-top: 200px;
-width: 300px;
-height: 300px;
-background: #014134;
-border-radius: 50%;
-}
-.general_2{
-
-margin-left: 800px;
-margin-top: -300px;
-width: 300px;
-height: 300px;
-background: #014134;
-border-radius: 50%;
-}
-
-
 
 body{
   margin: var(--header-height) 0 0 0;
@@ -407,46 +190,31 @@ body{
   font-weight: var(--font-semi-bold);
   text-align: left;
 }
-h3,h4{
-  color: var(--second-color);
-  font-weight: var(--font-semi-bold);
-  text-align: center;
-  font-size: 6rem;
-  line-height: 3;
-}
-h1{
-  color: var(--verdeo);
-  font-weight: var(--font-semi-bold);
-  text-align: center;
-  font-size: 1rem;
-  line-height: 2.5;
-}
-h2{
-  color: var(--verdeo);
-  font-weight: var(--font-semi-bold);
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2.5;
-}
 
-h6{
-  color: var(--second-color);
+h1,h2,h3,h4{
+  color: var(--verdeo);
   font-weight: var(--font-semi-bold);
   text-align: center;
-  font-size: 1rem;
-  line-height: 2.5;
-  }
+}
+h6{
+  color: gray;
+ align-items: center;
+ text-align: center;
+ 
+}
+h5{
+  color: var(--verdeo);
+ text-align: center;
+ size: 2rem;
+
+ 
+}
 ul{
   list-style: none;
 }
 
 p{
- color: var(--verdeo);
-  font-weight: var(--font-semi-bold);
-  text-align: center;
-  font-size: 2rem;
-  line-height: 3;
-
+  text-decoration: none;
 }
 .link{
     text-decoration: none;
@@ -849,6 +617,7 @@ img{
   border-radius: 3rem;
   font-weight: var(--font-medium);
   transition: .3s;
+  position: center
 }
 .button2{
   display: inline-block;
@@ -1830,3 +1599,322 @@ button {
 #t-5:checked ~ .testimonials label[for="t-5"] {
     z-index: 4;
 }
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #404040;
+    font-family: 'Poppins', sans-serif;
+  --verdeclaro: 135;
+  --verdeoscuro:168 ;
+  --first-color: hsl(var(--hue), 91%, 54%);
+  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --title-color: var(--verdeo);
+  --text-color: var(--verdeo);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --second-color: hsl(var(--verdeclaro), 32%, 80%);
+  --verdeo: hsl(var(--verdeoscuro), 97%, 13%);
+    --mb-1: 1rem;
+}
+}
+
+/*=====================================
+estilos de la utilidad
+Copiar esto
+=====================================*/
+.seccion-perfil-usuario .perfil-usuario-body,
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--second-color);
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 17rem;
+    background: var(--second-color);
+    border-radius: 0 0 20px 20px;
+    /*
+    background-image: url('http://localhost/multimedia/png/user-portada-3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
+    margin-right: 1rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 10px 0;
+}
+
+.seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.seccion-perfil-usuario .redes-sociales {
+    position: absolute;
+    right: calc(0px - 50px - 1rem);
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes {
+    border: 0;
+    background-color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    font-size: 1.3rem;
+}
+
+.seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+    margin-top: .5rem;
+}
+
+.seccion-perfil-usuario .boton-redes.facebook {
+    background-color: #5955FF;
+}
+
+.seccion-perfil-usuario .boton-redes.twitter {
+    background-color: #35E1BF;
+}
+
+.seccion-perfil-usuario .boton-redes.instagram {
+    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+}
+
+/* adactacion a dispositivos */
+@media (max-width: 750px) {
+    .seccion-perfil-usuario .lista-datos {
+        width: 50%;
+    }
+
+    .seccion-perfil-usuario .perfil-usuario-portada,
+    .seccion-perfil-usuario .perfil-usuario-body {
+        width: 95%;
+    }
+
+    .seccion-perfil-usuario .redes-sociales {
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center
+    }
+
+    .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+}
+
+
+
+</style>
+    <!--==========================
+=            html            =
+===========================-->
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"><?php echo $row["nombre_mascota"]?></h3>
+    
+                
+                
+            </div>
+            </div>
+        </div>
+                <div class="perfil-usuario-footer" style="width: 40rem;">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-signs"></i> Edad: <?php echo $row["edad"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Sexo: <?php echo $row["sexo"]?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Especie: <?php echo $row["especie"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Raza: <?php echo $row["raza"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Fecha perdida: <?php echo $row["fecha_perdida"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Localidad: <?php echo $row["localidad"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Barrio: <?php echo $row["barrio"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Calle: <?php echo $row["calle"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> ¿Tenia chapita?: <?php echo $row["chapita"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Obsevaciones: <?php echo $row["observacion"]?></li>
+                    <br></br>
+                    
+                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto </BUTTON> </div>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <br></br>
+  
+            <div style="padding: 15px;"><a href="perdidos-lista.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
+
+
+<div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
+                <h3>Nombre completo</h3>
+
+                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
+                    <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="popup.js"></script>
+         <body class="p-3 m-0 border-0 bd-example">
+
+    <!-- Example Code -->
+    
+   
+    </section>
+    <!--====  End of html  ====-->
+
+
+<script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--====  End of tarjeta  ====-->
+</body>
+
+</html>

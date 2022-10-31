@@ -33,7 +33,7 @@
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img"> 
                     Buscando Huellitas
                 </a>
