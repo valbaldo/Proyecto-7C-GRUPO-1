@@ -63,7 +63,7 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
-
+            <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>

@@ -61,8 +61,8 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
-                <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
