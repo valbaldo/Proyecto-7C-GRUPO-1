@@ -1,6 +1,8 @@
 <?php
     include("assets/php/cn.php");
     $usuarios="SELECT * FROM perdidos";
+    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +39,7 @@
                 </a>
 <ul class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Usuario
+              <?php echo $_SESSION["username"] ?>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
