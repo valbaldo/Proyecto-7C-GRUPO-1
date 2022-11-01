@@ -6,29 +6,35 @@
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT * FROM adopcion WHERE ID_adopcion = ".$parts['query'];
+    $usuarios="SELECT * FROM usuarios WHERE ID_usuario = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscando Huellitas</title>
-    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  
 
-</head>
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
-<body>
-  <title>Buscando Huellitas</title>
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!--=============== CSS CARROUSEL ===============--> 
+        <link rel="stylesheet" href="assets/css/carrousel.css">
+
+
+        <title>Buscando Huellitas</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -44,7 +50,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionadopcion.php">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="assets/php/cerrarSesion.php">Cerrar sesión</a></li>
               <li>
                 
               </li>
@@ -92,15 +98,32 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php" id="btn-abrir-popup2">Dar en adopcion</a></li>
-            </ul> 
+                <li><a class="dropdown-item" href="adopcion formulario FINAL/form-adopcion.php">Dar en adopcion</a></li>
+                    <div class="overlay" id="overlay2">
+                    <div class="popup" id="popup2">
+                    <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
+                    <h3>Iniciar sesión</h3>
+                    <form action="assets/php/login/login-index-adoptar.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                    </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    <script type="text/javascript" src="alerta2.js"></script>
             </div>
         </div>
         
     </div>
     </div>
   </div>
-</nav>  
+</nav>
 
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
@@ -1694,8 +1717,8 @@ Copiar esto
 
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     align-items: center;
     justify-content: center;
     border: 7px solid #FFFFFF;
@@ -1854,7 +1877,7 @@ Copiar esto
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="img-avatar">
+                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -1864,7 +1887,7 @@ Copiar esto
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo"></h3>
+                <h3 class="titulo"><?php echo $_SESSION["username"]?></h3>
     
                 
                 
@@ -1873,46 +1896,23 @@ Copiar esto
         </div>
                 <div class="perfil-usuario-footer" style="width: 40rem;">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-briefcase"></i> Zona/barrio: <?php echo $row["barrio"]?></li>
-                   
-                    <li><i class="icono fas fa-map-signs"></i> Edad: <?php echo $row["edad"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Tamaño: <?php echo $row["tamanio"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Sexo: <?php echo $row["edad"]?></li>
-                    <li><i class="icono fas fa-phone-alt"></i> Especie: <?php echo $row["especie"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Vacunas: <?php echo $row["cuales_vacunas"]?></li>
-          
-                    <li><i class="icono fas fa-briefcase"></i> Enfermedades: <?php echo $row["cuales_problemas"]?></li>
-                   
-                    <li><i class="icono fas fa-briefcase"></i> Obsevaciones: <?php echo $row["observacion"]?></li>
-                    <br></br>
-                    
-                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto </BUTTON> </div>
-                    
-                    
-                    
+                    <li><i class="icono fas fa-map-signs"></i> Nombre completo: <?php echo $row["username"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Mail: <?php echo $row["mail"]?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono: <?php echo $row["celular"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Cant. de publicaciones: </li>
                     
                 </ul>
             </div>
             <br></br>
-  
-            <div style="padding: 15px;"><a href="adoptar-lista-log.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
-
-
-<div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
-                <h3>Nombre completo</h3>
-
-                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
-                    <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
-                </form>
+            <div class="perfil-usuario-footer" style="width: 40rem;">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-signs"></i> Nombre completo:</li>
+                    <li><i class="icono fas fa-briefcase"></i> Mail:</li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
+                    <li><i class="icono fas fa-briefcase"></i> Cant. de publicaciones:</li>
+                    
+                </ul>
             </div>
-        </div>
-    </div>
-
-
-
-    <script src="popup.js"></script>
          <body class="p-3 m-0 border-0 bd-example">
 
     <!-- Example Code -->

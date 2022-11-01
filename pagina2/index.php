@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    $usuarios="SELECT * FROM perdidos order by id_perdido desc";
 ?>
 
 <!DOCTYPE html>
@@ -161,19 +161,19 @@
         <input type="radio" name="testimonial" id="t-3" checked>
         <input type="radio" name="testimonial" id="t-4">
         <input type="radio" name="testimonial" id="t-5">
-        <div class="testimonials">
+            <div class="testimonials">
             <label class="item" for="t-1">
-                <img src="https://dummyimage.com/150" alt="picture">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="picture">
                 <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
                 <h2>- Princy, Web Developer</h2>
             </label>
             <label class="item" for="t-2">
-                <img src="https://dummyimage.com/150" alt="picture">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="picture">
                 <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
                 <h2>- Princy, Web Developer</h2>
             </label>
             <label class="item" for="t-3">
-                <img src="https://dummyimage.com/150" alt="picture">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="picture">
                 <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
                 <h2>- Princy, Web Developer</h2>
             </label>

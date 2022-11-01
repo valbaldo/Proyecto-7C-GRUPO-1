@@ -2,7 +2,8 @@
     include("assets/php/cn.php");
     $usuarios="SELECT * FROM perdidos";
     session_start();
-
+    $resultado=mysqli_query($conexion, $usuarios);
+    $row=mysqli_fetch_assoc($resultado);
 ?>
 
 <!DOCTYPE html>
@@ -39,11 +40,11 @@
                 </a>
 <ul class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $_SESSION["username"] ?>
+              <?php echo $_SESSION["username"]?>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="assets/php/cerrarSesion.php">Cerrar sesión</a></li>
               <li>
                 
               </li>
@@ -91,7 +92,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
+                <li><a class="dropdown-item" href="adopcion formulario FINAL/form-adopcion.php">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>

@@ -1,6 +1,6 @@
 <?php
 	include ("cn.php");
-
+	session_start();
 	$tamanio= $_POST['tamanio'];
 	$edad= $_POST['edad'];
 	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
@@ -13,11 +13,11 @@
 	$cuales_vacunas= $_POST['cuales_vacunas'];
 	$cuales_problemas= $_POST['cuales_problemas'];
 	$barrio= $_POST['barrio'];
-
+	$id = $_SESSION["IdUsuario"];
 
 	
 
-	$insertar= "INSERT INTO adopcion(tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio) VALUES ('$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio')";
+	$insertar= "INSERT INTO adopcion(ID_usuario, tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio) VALUES ('$id', '$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

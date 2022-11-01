@@ -14,13 +14,14 @@
 	$chapita= $_POST['chapita'];
 	$observacion= $_POST['observacion'];
 	$id = $_SESSION["IdUsuario"];
-	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha_perdida, chapita, observacion) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha','$chapita','$observacion')";
+	
+	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha_perdida, chapita, observacion) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha_perdida','$chapita','$observacion')";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){
             echo'<script type="text/javascript">
             alert("Reporte enviado");
-            window.location.href="../index.log.php";
+            window.location.href="../index-log.php";
             </script>';
 	} else{
             echo'<script type="text/javascript">

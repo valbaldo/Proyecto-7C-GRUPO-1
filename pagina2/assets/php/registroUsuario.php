@@ -1,9 +1,12 @@
 <?php
+include ("cn.php");
 include('config.php');
 
 if(isset($_POST['registro'])){
     $usuario = $_POST['username'];
+    $mail=$_POST['mail'];
     $pass = $_POST['pass'];
+    $foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
     $passCifrada = password_hash($pass,PASSWORD_DEFAULT);
     
 
@@ -20,7 +23,7 @@ if(isset($_POST['registro'])){
         </script>';
     }
     else{
-        $consultaRegistro = $conn -> prepare("INSERT INTO usuarios(username, pass, tipo) VALUES (:usuario , :pass, 2)");
+        $consultaRegistro = $conn -> prepare("INSERT INTO usuarios(username, pass, tipo, mail, foto) VALUES (:usuario , :pass, 2, '$mail', '$foto')");
         $consultaRegistro -> bindParam("usuario",$usuario,PDO::PARAM_STR);
         $consultaRegistro -> bindParam("pass",$passCifrada,PDO::PARAM_STR);
         $resultadoRegistro = $consultaRegistro -> execute();

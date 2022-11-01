@@ -32,15 +32,31 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">
-                    <img src="assets/img/logo.png" alt="" class="nav__logo-img"> 
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">
+                    <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
+<BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
 
 
-
-
+<div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
+                <h3>Iniciar sesión</h3>
+                <form action="assets/php/login/login-perdidos.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -51,44 +67,63 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Buscando Huellitas</h5>
-
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Mascotas desaparecidas
-            </a>
+        <div class="offcanvas-body">
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
-              <li><a class="dropdown-item" href="#">Buscar Mascota</a></li>
-              <li>
-                
-              </li>
+                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
+            <!--==================== PRIMER BOTON ====================-->
+                    <div class="overlay" id="overlay1">
+                    <div class="popup" id="popup1">
+                    <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
+                    <h3>Iniciar sesión</h3>
+                    <form action="assets/php/login/login-perdidos-report.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                    </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    <script type="text/javascript" src="alerta.js"></script>
             </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Adopcion
-            </a>
+            <!--==================== SEGUNDO BOTON ====================-->
+            <div style="margin-top: 1rem;">
+            <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Dar en adopcion </a></li>
-              <li><a class="dropdown-item" href="#">Adoptar</a></li>
-              <li>
-                
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+                <li><a class="dropdown-item" href="adoptar-lista.php">Adoptar</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
+                    <div class="overlay" id="overlay2">
+                    <div class="popup" id="popup2">
+                    <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
+                    <h3>Iniciar sesión</h3>
+                    <form action="assets/php/login/login-perdidos-adoptar.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                    </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    <script type="text/javascript" src="alerta2.js"></script>
+            </div>
+        </div>
+        
+    </div>
     </div>
   </div>
 </nav>
