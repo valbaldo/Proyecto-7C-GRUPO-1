@@ -9,6 +9,7 @@
     $usuarios="SELECT * FROM usuarios WHERE ID_usuario = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
+
     $row=mysqli_fetch_assoc($resultado);
 ?>
 
@@ -1877,7 +1878,7 @@ Copiar esto
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>

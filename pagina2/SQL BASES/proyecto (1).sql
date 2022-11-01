@@ -65,7 +65,7 @@ INSERT INTO `adopcion` (`ID_adopcion`, `ID_usuario`, `tamanio`, `edad`, `foto`, 
 --
 
 CREATE TABLE `perdidos` (
-  `ID_perdido` int(11) NOT NULL,
+  `ID_perdido` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `ID_usuario` int(11) NOT NULL,
   `nombre_mascota` varchar(150) NOT NULL,
   `edad` varchar(150) NOT NULL,
@@ -78,7 +78,8 @@ CREATE TABLE `perdidos` (
   `calle` varchar(150) NOT NULL,
   `fecha` date NOT NULL,
   `chapita` varchar(150) NOT NULL,
-  `observacion` varchar(150) NOT NULL
+  `observacion` varchar(150) NOT NULL,
+  `encontrado` int(1) DEFAULT 0 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -97,7 +98,6 @@ INSERT INTO `perdidos` (`ID_perdido`, `ID_usuario`, `nombre_mascota`, `edad`, `f
 CREATE TABLE `publicacion` (
   `id_publicacion` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `id_adopcion` int(11) NOT NULL,
   `id_perdido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

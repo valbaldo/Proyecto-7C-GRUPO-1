@@ -2,11 +2,12 @@
     include("assets/php/cn.php");
     session_start();
     
+    
   $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT * FROM perdidos WHERE ID_perdido = ".$parts['query'];
+    $usuarios="SELECT * FROM perdidos WHERE encontrado = 0 AND ID_perdido = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
@@ -44,7 +45,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionperdido.php">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionperdidos.php">Cerrar sesión</a></li>
               <li>
                 
               </li>
@@ -1893,7 +1894,7 @@ Copiar esto
                     <li><i class="icono fas fa-briefcase"></i> Sexo: <?php echo $row["sexo"]?></li>
                     <li><i class="icono fas fa-phone-alt"></i> Especie: <?php echo $row["especie"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Raza: <?php echo $row["raza"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Fecha perdida: <?php echo $row["fecha_perdida"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Fecha perdida: <?php echo date('d-m-Y', strtotime($row["fecha"]));?></li>
                     <li><i class="icono fas fa-briefcase"></i> Localidad: <?php echo $row["localidad"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Barrio: <?php echo $row["barrio"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Calle: <?php echo $row["calle"]?></li>
@@ -1916,9 +1917,9 @@ Copiar esto
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
                <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
-                <h3>Nombre completo</h3>
+                <h3></h3>
 
-                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
+                    <p>Mail<a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
                     <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
                 </form>
             </div>

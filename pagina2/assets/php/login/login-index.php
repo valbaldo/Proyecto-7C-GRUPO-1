@@ -21,7 +21,7 @@ if(isset($_POST['login'])){
     else{
 
         if(password_verify($pass,$resultado['pass'])){ 
-            $_SESSION['IdUsuario'] = $resultado['ID_usuario'];
+            $_SESSION['ID_usuario'] = $resultado['ID_usuario'];
             $_SESSION['username'] = $resultado['username'];
            header("Location: ../../../index-log.php");
         }
