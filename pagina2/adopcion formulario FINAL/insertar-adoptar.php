@@ -13,7 +13,7 @@
 	$cuales_vacunas= $_POST['cuales_vacunas'];
 	$cuales_problemas= $_POST['cuales_problemas'];
 	$barrio= $_POST['barrio'];
-	$id = $_SESSION["IdUsuario"];
+	$id = $_SESSION["ID_usuario"];
 
 	
 

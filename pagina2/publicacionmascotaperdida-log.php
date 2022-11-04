@@ -1916,15 +1916,16 @@ Copiar esto
 
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
-                <h3></h3>
+               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
+                <h3>Nombre completo</h3>
 
-                    <p>Mail<a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
+                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
                     <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
                 </form>
             </div>
         </div>
     </div>
+
 
 
 

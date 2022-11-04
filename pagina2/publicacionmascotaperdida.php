@@ -5,7 +5,7 @@
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT * FROM perdidos WHERE ID_perdido = ".$parts['query'];
+    $usuarios="SELECT * FROM perdidos WHERE encontrado = 0 AND ID_perdido = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
@@ -32,35 +32,25 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index-log.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
+<ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php echo $_SESSION["username"]?>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionperdidos.php">Cerrar sesión</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </ul>
 
-
-<div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
-                <h3>Iniciar sesión</h3>
-                <form action="assets/php/login/login-perdidos.php" method="POST">
-                    <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
-                        <input name="pass" type="password" placeholder="Contraseña" required>
-                    </div>
-                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
-                </form>
-                    <br></br>
-                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="popup.js"></script>
+          
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -73,14 +63,14 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
-                <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login/login-perdidos-report.php" method="POST">
+                    <form action="assets/php/login-index-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -93,20 +83,19 @@
                     </div>
                     </div>
                     </div>
-                    <script type="text/javascript" src="alerta.js"></script>
             </ul>
             <!--==================== SEGUNDO BOTON ====================-->
             <div style="margin-top: 1rem;">
             <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="adoptar-lista.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
+                <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
+                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login/login-perdidos-adoptar.php" method="POST">
+                    <form action="assets/php/login/login-index-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -1903,7 +1892,7 @@ Copiar esto
                     <li><i class="icono fas fa-briefcase"></i> Sexo: <?php echo $row["sexo"]?></li>
                     <li><i class="icono fas fa-phone-alt"></i> Especie: <?php echo $row["especie"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Raza: <?php echo $row["raza"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Fecha perdida: <?php echo $row["fecha_perdida"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Fecha perdida: <?php echo date('d-m-Y', strtotime($row["fecha"]));?></li>
                     <li><i class="icono fas fa-briefcase"></i> Localidad: <?php echo $row["localidad"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Barrio: <?php echo $row["barrio"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Calle: <?php echo $row["calle"]?></li>
@@ -1925,7 +1914,7 @@ Copiar esto
 
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
+               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
                 <h3>Nombre completo</h3>
 
                     <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>

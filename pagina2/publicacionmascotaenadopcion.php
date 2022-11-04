@@ -5,10 +5,11 @@
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT * FROM adopcion WHERE ID_adopcion = ".$parts['query'];
+    $usuarios="SELECT a.*, u.username FROM adopcion a JOIN usuarios u ON u.ID_usuario = a.ID_usuario WHERE a.ID_adopcion = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
+
 
 ?>
 
@@ -1912,7 +1913,7 @@ Copiar esto
                     <li><i class="icono fas fa-briefcase"></i> Obsevaciones: <?php echo $row["observacion"]?></li>
                     <br></br>
                     
-                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto </BUTTON> </div>
+                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto</BUTTON> </div>
                     
                     
                     
@@ -1926,8 +1927,8 @@ Copiar esto
 
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-               <button  <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a></button>
-                <h3>Nombre completo</h3>
+               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
+                <h3><?php echo $row["username"]?></h3>
 
                     <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
                     <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>

@@ -93,7 +93,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php" id="btn-abrir-popup2">Dar en adopcion</a></li>
+                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php" id="">Dar en adopcion</a></li>
             </ul> 
             </div>
         </div>
