@@ -33,35 +33,11 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index-log.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<BUTTON id="btn-abrir-popup" CLASS= "btn"> Iniciar sesión </BUTTON>
-
-
-<div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-               <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
-                <h3>Iniciar sesión</h3>
-                <form action="assets/php/login/login-adoptar-adoptar.php" method="POST">
-                    <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
-                        <input name="pass" type="password" placeholder="Contraseña" required>
-                    </div>
-                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
-                </form>
-                    <br></br>
-                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="popup.js"></script>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -74,14 +50,14 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-report.php" method="POST">
+                    <form action="assets/php/login-index-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -1913,7 +1889,7 @@ Copiar esto
                     <li><i class="icono fas fa-briefcase"></i> Obsevaciones: <?php echo $row["observacion"]?></li>
                     <br></br>
                     
-                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto</BUTTON> </div>
+                  <div><BUTTON style="padding: 15px; width: 15rem;" id="btn-abrir-popup" CLASS= "btn"> Datos de contacto </BUTTON> </div>
                     
                     
                     
@@ -1922,7 +1898,7 @@ Copiar esto
             </div>
             <br></br>
   
-            <div style="padding: 15px;"><a href="adoptar-lista.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
+            <div style="padding: 15px;"><a href="adoptar-lista-log.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
 
 
 <div class="overlay" id="overlay">
@@ -1947,8 +1923,6 @@ Copiar esto
    
     </section>
     <!--====  End of html  ====-->
-
-
 <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <!--====  End of tarjeta  ====-->

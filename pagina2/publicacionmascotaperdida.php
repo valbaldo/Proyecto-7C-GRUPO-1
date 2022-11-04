@@ -32,25 +32,35 @@
     <body>
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index-log.php">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<ul class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $_SESSION["username"]?>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionperdidos.php">Cerrar sesión</a></li>
-              <li>
-                
-              </li>
-            </ul>
-          </ul>
+<BUTTON id="btn-abrir-popup0" CLASS= "btn"> Iniciar sesión </BUTTON>
 
-          
+
+<div class="overlay" id="overlay0">
+            <div class="popup" id="popup0">
+               <a href="#" id="btn-cerrar-popup0" type="button" class="btn-close" aria-label="Close"></a>
+                <h3>Iniciar sesión</h3>
+                <form action="assets/php/login/login-adoptar-adoptar.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="popup.js"></script>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -63,14 +73,14 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
-                <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-index-report.php" method="POST">
+                    <form action="assets/php/login-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -83,19 +93,21 @@
                     </div>
                     </div>
                     </div>
+                    <script type="text/javascript" src="alerta.js"></script>
+                    <script type="text/javascript" src="alerta0.js"></script>
             </ul>
             <!--==================== SEGUNDO BOTON ====================-->
             <div style="margin-top: 1rem;">
             <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php">Dar en adopcion</a></li>
+                <li><a class="dropdown-item" href="adoptar-lista.php">Adoptar</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login/login-index-adoptar.php" method="POST">
+                    <form action="assets/php/login-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
