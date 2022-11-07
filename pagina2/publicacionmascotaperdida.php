@@ -5,10 +5,11 @@
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT * FROM perdidos WHERE encontrado = 0 AND ID_perdido = ".$parts['query'];
+    $usuarios="SELECT a.*, u.username FROM perdidos a JOIN usuarios u ON u.ID_usuario = a.ID_usuario WHERE a.ID_perdido = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
+
 
 ?>
 
@@ -1927,9 +1928,9 @@ Copiar esto
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
                <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
-                <h3>Nombre completo</h3>
+                <h3><?php echo $row["username"]?></h3>
 
-                    <p>Mail: <a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
+                    <p>Mail:<a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
                     <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
                 </form>
             </div>

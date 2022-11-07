@@ -39,20 +39,6 @@
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
-<ul class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $_SESSION["username"]?>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
-              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionadopcion.php">Cerrar sesión</a></li>
-              <li>
-                
-              </li>
-            </ul>
-          </ul>
-
-          
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -66,7 +52,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
-                <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
@@ -92,16 +78,33 @@
             <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php" id="">Dar en adopcion</a></li>
-            </ul> 
+                <li><a class="dropdown-item" href="adoptar-lista.php">Adoptar</a></li>
+                <li><a class="dropdown-item" href="#" id="btn-abrir-popup2">Dar en adopcion</a></li>
+                    <div class="overlay" id="overlay2">
+                    <div class="popup" id="popup2">
+                    <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>
+                    <h3>Iniciar sesión</h3>
+                    <form action="assets/php/login-adoptar.php" method="POST">
+                    <div class="contenedor-inputs">
+                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="pass" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
+                    </form>
+                    <br></br>
+                    <p>¿No tienes una cuenta? <a class="link" href="register.html">Registrate </a></p>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    <script type="text/javascript" src="alerta2.js"></script>
             </div>
         </div>
         
     </div>
     </div>
   </div>
-</nav>  
+</nav>
 
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
@@ -1921,8 +1924,6 @@ Copiar esto
    
     </section>
     <!--====  End of html  ====-->
-
-
 <script src="assets/js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <!--====  End of tarjeta  ====-->

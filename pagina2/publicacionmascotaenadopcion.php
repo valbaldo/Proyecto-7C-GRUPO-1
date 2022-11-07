@@ -34,7 +34,7 @@
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index-log.php">
+    <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -50,14 +50,14 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="#" id="btn-abrir-popup1">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
                     <a href="#" id="btn-cerrar-popup1" type="button" class="btn-close" aria-label="Close"></a>
                     <h3>Iniciar sesión</h3>
-                    <form action="assets/php/login-index-report.php" method="POST">
+                    <form action="assets/php/login/login-index-report.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
@@ -1898,7 +1898,7 @@ Copiar esto
             </div>
             <br></br>
   
-            <div style="padding: 15px;"><a href="adoptar-lista-log.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
+            <div style="padding: 15px;"><a href="adoptar-lista.php"><BUTTON CLASS= "btn"> Volver </BUTTON></a></div>
 
 
 <div class="overlay" id="overlay">
