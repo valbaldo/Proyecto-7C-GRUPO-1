@@ -39,6 +39,18 @@
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
+    <ul class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php echo $_SESSION["username"]?>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="assets/php/cerrarSesion-publicacionperdidos.php">Cerrar sesión</a></li>
+              <li>
+                
+              </li>
+            </ul>
+          </ul>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

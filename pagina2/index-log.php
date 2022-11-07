@@ -1,9 +1,9 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
     session_start();
+
+    $usuarios="SELECT * FROM perdidos WHERE encontrado = 0 order by id_perdido desc LIMIT 5";
     $resultado=mysqli_query($conexion, $usuarios);
-    $row=mysqli_fetch_assoc($resultado);
 ?>
 
 <!DOCTYPE html>
@@ -148,44 +148,43 @@
                     <h2>Mascotas desaparecidas</h2>
                 </div>
             <div class="slider">
-        <input type="radio" name="testimonial" id="t-1">
+
+        <input type="radio" name="testimonial" id="t-1" checked>
         <input type="radio" name="testimonial" id="t-2">
-        <input type="radio" name="testimonial" id="t-3" checked>
+        <input type="radio" name="testimonial" id="t-3">
         <input type="radio" name="testimonial" id="t-4">
         <input type="radio" name="testimonial" id="t-5">
-        <div class="testimonials">
-            <label class="item" for="t-1">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-2">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-3">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-4">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
-            <label class="item" for="t-5">
-                <img src="https://dummyimage.com/150" alt="picture">
-                <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                <h2>- Princy, Web Developer</h2>
-            </label>
+            <div class="testimonials">
+            <?php
+                $i = 0;
+                $resultado=mysqli_query($conexion, $usuarios);
+                while($row=mysqli_fetch_assoc($resultado)){
+                    $i++;
+                ?>
+                <label class="item" for="t-<?php echo $i?>">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="picture">
+                    <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+                    <h2>- <?php echo $row['nombre_mascota'] ?></h2>
+                </label>
+            <?php
+            }
+            ?>
+            
         </div>
         <div class="dots">
-            <label for="t-1"></label>
-            <label for="t-2"></label>
-            <label for="t-3"></label>
-            <label for="t-4"></label>
-            <label for="t-5"></label>
+            <?php
+                $resultado=mysqli_query($conexion, $usuarios);
+
+                $i = 0;
+                while($row=mysqli_fetch_assoc($resultado)){
+                    $i++;
+                ?>
+                <label for="t-<?php echo $i?>"></label>
+
+            <?php
+            }
+            ?>
+
         </div>
     </div>
 
