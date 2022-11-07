@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos WHERE encontrado = 0 order by id_perdido desc LIMIT 5";
+    $usuarios="SELECT * FROM perdidos WHERE encontrado = 1 order by id_perdido desc LIMIT 5";
     $resultado=mysqli_query($conexion, $usuarios);
 ?>
 

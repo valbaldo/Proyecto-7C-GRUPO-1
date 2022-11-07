@@ -1,9 +1,15 @@
 <?php
     include("assets/php/cn.php");
-    session_start();
+    $usuarios="SELECT * FROM perdidos";
 
-    $usuarios="SELECT * FROM perdidos WHERE encontrado = 1 order by id_perdido desc LIMIT 5";
-    $resultado=mysqli_query($conexion, $usuarios);
+    $query="SELECT count(*) as COUNT FROM `perdidos` WHERE encontrado = 2;";
+    $resultado=mysqli_query($conexion, $query);
+    $row=mysqli_fetch_assoc($resultado);
+    $query2="SELECT count(*) as COUNT FROM `adopcion` WHERE adoptado = 2;";
+    $resultado2=mysqli_query($conexion, $query2);
+    $row2=mysqli_fetch_assoc($resultado2);
+
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +28,11 @@
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
         <!--=============== CSS ===============--> 
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/stylesadmin.css">
 
         <!--=============== CSS CARROUSEL ===============--> 
         <link rel="stylesheet" href="assets/css/carrousel.css">
+    
 
 
         <title>Buscando Huellitas</title>
@@ -34,7 +41,7 @@
         <!--==================== HEADER ====================-->
         <nav class="navbar fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index-log.php">
+    <a class="navbar-brand" href="index-admin.php">
                     <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     Buscando Huellitas
                 </a>
@@ -43,7 +50,7 @@
               <?php echo $_SESSION["username"]?>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $_SESSION["ID_usuario"]?>">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="perfiladmin.php?<?php echo $_SESSION["ID_usuario"]?>">Mi cuenta</a></li>
               <li><a class="dropdown-item" href="assets/php/cerrarSesion.php">Cerrar sesión</a></li>
               <li>
                 
@@ -64,7 +71,7 @@
         <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="perdidos-lista-log.php">Buscar mascota</a></li>
+                <li><a class="dropdown-item" href="perdidos-lista-admin.php">Buscar mascota</a></li>
                 <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
@@ -91,7 +98,7 @@
             <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="adoptar-lista-log.php">Adoptar</a></li>
+                <li><a class="dropdown-item" href="adoptar-lista-admin.php">Adoptar</a></li>
                 <li><a class="dropdown-item" href="adopcion formulario FINAL/form-adopcion.php">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
@@ -121,72 +128,17 @@
 
         <main class="main">
             <!--==================== HOME ====================-->
-            <section class="home container" id="home">
-                <div class="swiper home-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- HOME SLIDER 1 -->
-                            <div class="home__content grid">
-                                <div class="home__group">
-                                    <img src="assets/img/home1-img.png" alt="" class="home__img">
-                                </div>
-    
-                                <div class="home__data">
-                                    <h3 class="home__subtitle"></h3>
-                                    <h1 class="home__title">Buscando<br> Huellitas <br></h1>
-                                    <p class="home__description">Somos un grupo de personas que comparten un gran amor por los animales y por lo tanto buscamos su bienestar, de esto surge nuestra pagina. Sabemos que existen muchas agrupaciones y personas dedicadas al rescate animal.  Buscando Huellitas no pretende ser una de ellas, sino ser una herramienta para ellas, recibiendo reportes de mascotas que se han perdido o permitir dar en adopcion y vincular a los dueños y el adoptante/rescatista entre sí.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
 
-           
+            <div class="general">
+            <a href="perdidos-lista-admin.php"><h3><?php echo $row['COUNT'] ?></h3></a>
+            <P>Encontrados</P>
+            </div>
+            <div class="general_2">
+            <a href="adoptar-lista-admin.php"><h3><?php echo $row2['COUNT'] ?></h3></a>
+            <P>Adoptados</P>
+            </div>
+        
 
-            <!--==================== NEW ARRIVALS ====================-->
-                   
-<section class="home container" id="new">
-    <div class="content centered-elements">
-                    <h2>Mascotas desaparecidas</h2>
-                </div>
-            <div class="slider">
-
-        <input type="radio" name="testimonial" id="t-1" checked>
-        <input type="radio" name="testimonial" id="t-2">
-        <input type="radio" name="testimonial" id="t-3">
-        <input type="radio" name="testimonial" id="t-4">
-        <input type="radio" name="testimonial" id="t-5">
-            <div class="testimonials">
-            <?php
-                $i = 0;
-                $resultado=mysqli_query($conexion, $usuarios);
-                while($row=mysqli_fetch_assoc($resultado)){
-                    $i++;
-                ?>
-                <label class="item" for="t-<?php echo $i?>">
-                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>" alt="picture">
-                    <p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
-                    <h2>- <?php echo $row['nombre_mascota'] ?></h2>
-                </label>
-            <?php
-            }
-            ?>
-            
-        </div>
-        <div class="dots">
-            <?php
-                $resultado=mysqli_query($conexion, $usuarios);
-
-                $i = 0;
-                while($row=mysqli_fetch_assoc($resultado)){
-                    $i++;
-                ?>
-                <label for="t-<?php echo $i?>"></label>
-
-            <?php
-            }
-            ?>
-
-        </div>
-    </div>
 
             <!--==================== OUR NEWSLETTER ====================-->
             
@@ -194,9 +146,9 @@
             <footer class="footer section">
                 <div class="footer__container container grid">
                     <div class="footer__content">
-                        <p class="footer__description1">Buscando Huellitas © 2022</p>
+                        <h2 class="footer__description1">Buscando Huellitas © 2022</h2>
 
-                        <p class="footer__description">Busca, encontra y adopta.</p>
+                        <H1 class="footer__description">Busca, encontra y adopta.</H1>
                     </div>
                     </div>
                     

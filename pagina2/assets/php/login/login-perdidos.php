@@ -15,20 +15,25 @@ if(isset($_POST['login'])){
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("User y pass incorrectos");
-        window.location.href="../../../perdidos-lista.php";
+        window.location.href="../../../index.php";
         </script>';
     }
     else{
 
-        if(password_verify($pass,$resultado['pass'])){ 
-            $_SESSION['IdUsuario'] = $resultado['ID'];
+        if(password_verify($pass,$resultado['pass'])){
+            $_SESSION['ID_usuario'] = $resultado['ID_usuario'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location: ../../../perdidos-lista-log.php");
+
+            if($resultado['tipo'] == 1){
+                header("Location: ../../../index-admin.php");
+            }else{
+                header("Location: ../../../index-log.php");
+            }
         }
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="../../../perdidos-lista.php";
+            window.location.href="../../../index.php";
             </script>';
         }
     }

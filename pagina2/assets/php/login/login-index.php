@@ -20,10 +20,15 @@ if(isset($_POST['login'])){
     }
     else{
 
-        if(password_verify($pass,$resultado['pass'])){ 
+        if(password_verify($pass,$resultado['pass'])){
             $_SESSION['ID_usuario'] = $resultado['ID_usuario'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location: ../../../index-log.php");
+
+            if($resultado['tipo'] == 1){
+                header("Location: ../../../index-admin.php");
+            }else{
+                header("Location: ../../../index-log.php");
+            }
         }
         else{
             echo'<script type="text/javascript">

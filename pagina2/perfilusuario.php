@@ -50,7 +50,7 @@
               <?php echo $_SESSION["username"]?>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $row["ID_usuario"]?>">Mi cuenta</a></li>
+              <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $_SESSION["ID_usuario"]?>">Mi cuenta</a></li>
               <li><a class="dropdown-item" href="assets/php/cerrarSesion.php">Cerrar sesión</a></li>
               <li>
                 
