@@ -1,7 +1,7 @@
 <?php
     include("assets/php/cn.php");
     session_start();
-    $usuarios="SELECT * FROM perdidos order by id_perdido desc";
+    $usuarios="SELECT * FROM perdidos WHERE encontrado=2 order by id_perdido desc";
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
 ?>
