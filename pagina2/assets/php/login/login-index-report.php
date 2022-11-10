@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
             if($resultado['tipo'] == 1){
                 header("Location: ../../../index-admin.php");
             }else{
-                header("Location: ../../../index-log.php");
+                header("Location: ../../../report/report.php");
             }
         }
         else{

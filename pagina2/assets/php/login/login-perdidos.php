@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("User y pass incorrectos");
-        window.location.href="../../../index.php";
+        window.location.href="../../../perdidos-lista.php";
         </script>';
     }
     else{
@@ -27,13 +27,13 @@ if(isset($_POST['login'])){
             if($resultado['tipo'] == 1){
                 header("Location: ../../../index-admin.php");
             }else{
-                header("Location: ../../../index-log.php");
+                header("Location: ../../../perdidos-lista-log.php");
             }
         }
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="../../../index.php";
+            window.location.href="../../../perdidos-lista.php";
             </script>';
         }
     }

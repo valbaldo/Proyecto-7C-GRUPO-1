@@ -45,7 +45,7 @@
             <div class="popup" id="popup0">
                <a href="#" id="btn-cerrar-popup0" type="button" class="btn-close" aria-label="Close"></a>
                 <h3>Iniciar sesión</h3>
-                <form action="assets/php/login/login-adoptar-adoptar.php" method="POST">
+                <form action="assets/php/login/login-perdidos.php" method="POST">
                     <div class="contenedor-inputs">
                         <input name="username" type="text" placeholder="Usuario" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
