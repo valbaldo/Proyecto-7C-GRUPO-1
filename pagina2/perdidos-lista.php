@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos WHERE encontrado=2 order by id_perdido desc";
+    $usuarios="SELECT * FROM perdidos WHERE encontrado=1 order by id_perdido desc";
 ?>
 <!DOCTYPE html>
     <html lang="en">

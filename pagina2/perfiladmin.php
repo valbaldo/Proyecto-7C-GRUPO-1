@@ -1900,7 +1900,6 @@ Copiar esto
                     <li><i class="icono fas fa-map-signs"></i> Nombre completo: <?php echo $row["username"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Mail: <?php echo $row["mail"]?></li>
                     <li><i class="icono fas fa-phone-alt"></i> Telefono: <?php echo $row["celular"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Cant. de publicaciones: </li>
                     
                 </ul>
             </div>

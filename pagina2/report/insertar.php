@@ -13,9 +13,10 @@
 	$fecha_perdida= date('Y-m-d', strtotime($_POST['fecha_perdida']));
 	$chapita= $_POST['chapita'];
 	$observacion= $_POST['observacion'];
+	$cel= $_POST['cel'];
 	$id = $_SESSION["ID_usuario"];
 	
-	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion, encontrado) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha_perdida','$chapita','$observacion', 2)";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion, cel, encontrado) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha_perdida','$chapita','$observacion', '$cel', 1)";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

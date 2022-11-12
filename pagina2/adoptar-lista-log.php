@@ -1,7 +1,7 @@
 <?php
     include("assets/php/cn.php");
     session_start();
-    $usuarios="SELECT * FROM adopcion WHERE adoptado=2 order by id_adopcion desc";
+    $usuarios="SELECT * FROM adopcion WHERE adoptado=1 order by id_adopcion desc";
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
 ?>

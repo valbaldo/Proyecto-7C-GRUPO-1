@@ -13,11 +13,12 @@
 	$cuales_vacunas= $_POST['cuales_vacunas'];
 	$cuales_problemas= $_POST['cuales_problemas'];
 	$barrio= $_POST['barrio'];
+	$cel= $_POST['cel'];
 	$id = $_SESSION["ID_usuario"];
 
 	
 
-	$insertar= "INSERT INTO adopcion(ID_usuario, tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio, adoptado) VALUES ('$id', '$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio', 2)";
+	$insertar= "INSERT INTO adopcion(ID_usuario, tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio, cel, adoptado) VALUES ('$id', '$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio', '$cel', 1)";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

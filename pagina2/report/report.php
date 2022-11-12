@@ -171,7 +171,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label> </label>
-                            <input type="number" placeholder="Ingresar telefono celular" required name="celular">
+                            <input type="number" placeholder="Ingresar telefono celular" required name="cel">
                         </div>
                     </div>
 <div class="col-12">

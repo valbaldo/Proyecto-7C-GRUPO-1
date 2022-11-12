@@ -1920,7 +1920,7 @@ Copiar esto
                 <h3><?php echo $row["mail"]?></h3>
 
                     <p>Mail: <a class="Email" href=""><?php echo $row["username"]?></a></p>
-                    <p>Teléfono: <a class="number" href=""><?php echo $row["celular"]?></a></p>
+                    <p>Teléfono: <a class="number" href=""><?php echo $row["cel"]?></a></p>
                 </form>
             </div>
         </div>

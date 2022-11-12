@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM adopcion WHERE adoptado=2 order by id_adopcion desc";
+    $usuarios="SELECT * FROM adopcion WHERE adoptado=1 order by id_adopcion desc";
 ?>
 <!DOCTYPE html>
     <html lang="en">
