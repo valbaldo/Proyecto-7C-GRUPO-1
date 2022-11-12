@@ -4,7 +4,8 @@ include('config.php');
 session_start();
 
 if(isset($_POST['login'])){
-    $username = $_POST['username'];
+    $username= $_POST['username'];
+    $mail= $_POST['mail'];
     $pass = $_POST['pass'];
     $consulta = $conn->prepare("SELECT * FROM usuarios WHERE username =:usuario");
     $consulta->bindParam("usuario", $username, PDO::PARAM_STR); 
@@ -21,6 +22,7 @@ if(isset($_POST['login'])){
     else{
 
         if(password_verify($pass,$resultado['pass'])){
+            $_SESSION['mail'] = $resultado['mail'];
             $_SESSION['ID_usuario'] = $resultado['ID_usuario'];
             $_SESSION['username'] = $resultado['username'];
 

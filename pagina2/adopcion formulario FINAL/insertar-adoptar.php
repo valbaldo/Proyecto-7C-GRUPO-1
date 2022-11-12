@@ -17,7 +17,7 @@
 
 	
 
-	$insertar= "INSERT INTO adopcion(ID_usuario, tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio) VALUES ('$id', '$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio')";
+	$insertar= "INSERT INTO adopcion(ID_usuario, tamanio, edad, foto, sexo, especie, raza, tiene_vacuna, tiene_problemas, observacion, cuales_vacunas, cuales_problemas, barrio, adoptado) VALUES ('$id', '$tamanio','$edad', '$foto','$sexo','$especie','$raza','$tiene_vacuna', '$tiene_problemas', '$observacion', '$cuales_vacunas', '$cuales_problemas', '$barrio', 2)";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

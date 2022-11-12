@@ -46,7 +46,7 @@
                 <h3>Iniciar sesión</h3>
                 <form action="assets/php/login/login-index.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
@@ -82,7 +82,7 @@
                     <h3>Iniciar sesión</h3>
                     <form action="assets/php/login/login-index-report.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
@@ -108,7 +108,7 @@
                     <h3>Iniciar sesión</h3>
                     <form action="assets/php/login/login-index-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">

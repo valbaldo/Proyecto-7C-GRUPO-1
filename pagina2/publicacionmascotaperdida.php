@@ -5,7 +5,7 @@
     $parts = parse_url($actual_link);
     parse_str ($parts['query'], $query);
 
-    $usuarios="SELECT a.*, u.username FROM perdidos a JOIN usuarios u ON u.ID_usuario = a.ID_usuario WHERE a.ID_perdido = ".$parts['query'];
+    $usuarios="SELECT a.*, u.username, u.mail, u.celular FROM perdidos a JOIN usuarios u ON u.ID_usuario = a.ID_usuario WHERE a.ID_perdido = ".$parts['query'];
 
     $resultado=mysqli_query($conexion, $usuarios);
     $row=mysqli_fetch_assoc($resultado);
@@ -47,7 +47,7 @@
                 <h3>Iniciar sesión</h3>
                 <form action="assets/php/login/login-perdidos.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
@@ -83,7 +83,7 @@
                     <h3>Iniciar sesión</h3>
                     <form action="assets/php/login-report.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
@@ -110,7 +110,7 @@
                     <h3>Iniciar sesión</h3>
                     <form action="assets/php/login-adoptar.php" method="POST">
                     <div class="contenedor-inputs">
-                        <input name="username" type="text" placeholder="Usuario" required>
+                        <input name="username" type="text" placeholder="E-mail" required>
                         <input name="pass" type="password" placeholder="Contraseña" required>
                     </div>
                     <input name="login" type="submit" class="btn-submit" value="Iniciar sesion">
@@ -1928,10 +1928,10 @@ Copiar esto
 <div class="overlay" id="overlay">
             <div class="popup" id="popup">
                <a href="#" id="btn-cerrar-popup" type="button" class="btn-close" aria-label="Close"></a>
-                <h3><?php echo $row["username"]?></h3>
+                <h3><?php echo $row["mail"]?></h3>
 
-                    <p>Mail:<a class="Email" href="valentinabaldomar04@gmail.com">ejemplomail </a></p>
-                    <p>Teléfono: <a class="number" href="valentinabaldomar04@gmail.com">ejemplonumero </a></p>
+                    <p>E-mail: <a class="Email" href=""><?php echo $row["username"]?></a></p>
+                    <p>Teléfono: <a class="number" href=""><?php echo $row["celular"]?></a></p>
                 </form>
             </div>
         </div>

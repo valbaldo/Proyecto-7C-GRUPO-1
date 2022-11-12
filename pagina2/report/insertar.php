@@ -15,7 +15,7 @@
 	$observacion= $_POST['observacion'];
 	$id = $_SESSION["ID_usuario"];
 	
-	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha_perdida','$chapita','$observacion')";
+	$insertar= "INSERT INTO perdidos(nombre_mascota, ID_usuario, edad, foto, sexo, especie, raza, localidad, barrio, calle, fecha, chapita, observacion, encontrado) VALUES ('$nombre_mascota', '$id','$edad', '$foto','$sexo','$especie','$raza','$localidad','$barrio','$calle','$fecha_perdida','$chapita','$observacion', 2)";
 
 	$resultado=mysqli_query($conexion, $insertar);
 	if($resultado){

@@ -47,7 +47,7 @@
                 </a>
 <ul class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $_SESSION["username"]?>
+              <?php echo $_SESSION["mail"]?>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="perfilusuario.php?<?php echo $_SESSION["ID_usuario"]?>">Mi cuenta</a></li>
@@ -1888,7 +1888,7 @@ Copiar esto
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo"><?php echo $_SESSION["username"]?></h3>
+                <h3 class="titulo"><?php echo $_SESSION["mail"]?></h3>
     
                 
                 
@@ -1897,23 +1897,14 @@ Copiar esto
         </div>
                 <div class="perfil-usuario-footer" style="width: 40rem;">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Nombre completo: <?php echo $row["username"]?></li>
-                    <li><i class="icono fas fa-briefcase"></i> Mail: <?php echo $row["mail"]?></li>
+                    <li><i class="icono fas fa-map-signs"></i> Nombre completo: <?php echo $row["mail"]?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Mail: <?php echo $row["username"]?></li>
                     <li><i class="icono fas fa-phone-alt"></i> Telefono: <?php echo $row["celular"]?></li>
                     <li><i class="icono fas fa-briefcase"></i> Cant. de publicaciones: </li>
                     
                 </ul>
             </div>
             <br></br>
-            <div class="perfil-usuario-footer" style="width: 40rem;">
-                <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Nombre completo:</li>
-                    <li><i class="icono fas fa-briefcase"></i> Mail:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                    <li><i class="icono fas fa-briefcase"></i> Cant. de publicaciones:</li>
-                    
-                </ul>
-            </div>
          <body class="p-3 m-0 border-0 bd-example">
 
     <!-- Example Code -->

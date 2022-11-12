@@ -65,7 +65,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Mascotas desaparecidas</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="perdidos-lista-admin.php">Buscar mascota</a></li>
-                <li><a class="dropdown-item" href="report/report.php">Reportar mascota</a></li>
+                <li><a class="dropdown-item" href="#">Reportar mascota</a></li>
             <!--==================== PRIMER BOTON ====================-->
                     <div class="overlay" id="overlay1">
                     <div class="popup" id="popup1">
@@ -91,7 +91,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Adopcion</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="adoptar-lista-admin.php">Adoptar</a></li>
-                <li><a class="dropdown-item" href="adopcion formulario final/form-adopcion.php">Dar en adopcion</a></li>
+                <li><a class="dropdown-item" href="#">Dar en adopcion</a></li>
                     <div class="overlay" id="overlay2">
                     <div class="popup" id="popup2">
                     <a href="#" id="btn-cerrar-popup2" type="button" class="btn-close" aria-label="Close"></a>

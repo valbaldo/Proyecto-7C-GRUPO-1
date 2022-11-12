@@ -21,6 +21,7 @@ if(isset($_POST['login'])){
     else{
 
         if(password_verify($pass,$resultado['pass'])){
+            $_SESSION['mail'] = $resultado['mail'];
             $_SESSION['ID_usuario'] = $resultado['ID_usuario'];
             $_SESSION['username'] = $resultado['username'];
 
