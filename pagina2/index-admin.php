@@ -1,11 +1,11 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos";
+    $usuarios="CALL `usuarios`();";
 
     $query="SELECT count(*) as COUNT FROM `perdidos` WHERE encontrado = 2;";
     $resultado=mysqli_query($conexion, $query);
     $row=mysqli_fetch_assoc($resultado);
-    $query2="SELECT count(*) as COUNT FROM `adopcion` WHERE adoptado = 2;";
+    $query2="CALL `contarAdoptados`();";
     $resultado2=mysqli_query($conexion, $query2);
     $row2=mysqli_fetch_assoc($resultado2);
 

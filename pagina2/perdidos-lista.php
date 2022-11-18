@@ -1,6 +1,6 @@
 <?php
     include("assets/php/cn.php");
-    $usuarios="SELECT * FROM perdidos WHERE encontrado=1 order by id_perdido desc";
+    $usuarios="SELECT * FROM perdidos JOIN usuarios ON usuarios.ID_usuario = perdidos.ID_usuario WHERE encontrado=1 order by id_perdido desc;";
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -134,7 +134,7 @@
             while($row=mysqli_fetch_assoc($resultado)){
             ?>
                 <div class="product-container">
-                    <h3><?php echo $row["nombre_mascota"]?></h3>
+                    <h3><?php echo $row["nombre_mascota"]?> - <?php echo $row["mail"]?></h3>
                     <img class="fotos" src="data:image/jpg;base64,<?php echo base64_encode($row['foto']) ?>"/>
                     <h1 style="font-size: 1.2rem;">Localidad: <?php echo $row["localidad"]?></h1>
             
